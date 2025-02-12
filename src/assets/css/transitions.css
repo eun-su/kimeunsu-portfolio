@@ -1,0 +1,10 @@
+/* src/transitions.css */
+.fade-in {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  .fade-out {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+  

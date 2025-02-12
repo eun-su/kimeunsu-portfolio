@@ -1,0 +1,51 @@
+#wrap {
+  display: flex;
+}
+
+#navmenu {
+  display: flex;
+  width: 20%;
+  position: sticky;
+  margin: 70px 0 0 0px;
+}
+
+.homeview {
+  width: 80%;
+}
+
+/* .main { */
+/* display: flex; */
+/* flex-direction: row; */
+/* flex-wrap: nowrap; */
+/* justify-content: center; */
+/* overflow-x: hidden; */
+/* } */
+
+.accordion {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  padding: 1em;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion-body {
+  padding: 1em;
+  display: none;
+  background-color: #fff;
+}
+
+.accordion-body.show {
+  display: block;
+}
+
