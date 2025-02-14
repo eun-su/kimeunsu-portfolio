@@ -2,9 +2,13 @@
 .fade-in {
     opacity: 1;
     transition: opacity 500ms;
+    display: flex;
+    justify-content: flex-end;
   }
   .fade-out {
     opacity: 0;
     transition: opacity 500ms;
+    display: flex;
+    justify-content: flex-end;
   }
   

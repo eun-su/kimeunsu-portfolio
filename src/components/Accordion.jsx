@@ -17,7 +17,7 @@ function Accordion({ onLinkClick }) {
   const items = [
     {
       title: 'Accordion Item #1',
-      content: <strong>This is the first item's accordion body.</strong>,
+      content: <strong>Bootstrap 5</strong>,
       link: '/page1',
     },
     {

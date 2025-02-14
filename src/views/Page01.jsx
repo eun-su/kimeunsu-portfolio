@@ -5,9 +5,9 @@ import Footer from '../components/Footer';
 
 function Page1() {
   return (
-    <div>
+    <div className='homeview'>
       {/* <Header /> */}
-      <main>
+      <main className='main'>
         <div>This is Page 1</div>
       </main>
       <Footer />
