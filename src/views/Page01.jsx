@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 function Page1() {
   return (
-    <div className='homeview'>
+    <div>
       {/* <Header /> */}
       <main className='main'>
         <div>This is Page 1</div>
