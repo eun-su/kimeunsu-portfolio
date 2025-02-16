@@ -8,6 +8,7 @@
     /* background-color: rgba(116, 99, 99, 0.1); */
     /* backdrop-filter: blur(15px); */
     padding: 1rem;
+    width: 100vw;
 
     .header__logo {
         font-size: 0.9rem;
@@ -33,17 +34,17 @@
                 ul {
                     display: block;
                     position: absolute;
-                    right: 0;
+                    right: 20vw;
                     top: 68px;
                     background-color: rgba(116,99,99,0.1);
                     backdrop-filter: blur(15px);
                     z-index: 10000;
-                    min-width: 150px;
+                    min-width: 100vw;
                     padding: 20px 0;
 
                     li {
                         display: block;
-                        text-align: right;
+                        text-align: center;
 
                         a {
                             display: inline-block;
