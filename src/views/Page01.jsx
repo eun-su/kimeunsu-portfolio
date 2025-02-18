@@ -8,7 +8,7 @@ function Page1() {
     <div>
       {/* <Header /> */}
       <main className='main'>
-        <div>This is Page 1</div>
+        <div>BootStrap 5</div>
       </main>
       <Footer />
     </div>

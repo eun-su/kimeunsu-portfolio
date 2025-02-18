@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import './AccordionItem.css';
 
-function AccordionItem({ title, content, isOpen, onClick, link, onLinkClick }) {
+function AccordionItem({ title, content, isOpen, onClick, link1, onLinkClick }) {
   return (
     <div className="accordion-item">
       <div className="accordion-header" onClick={onClick}>
@@ -12,7 +12,7 @@ function AccordionItem({ title, content, isOpen, onClick, link, onLinkClick }) {
       <div className={`accordion-body ${isOpen ? 'show' : ''}`}>
         {content}
         <div className="accordion-footer">
-          <button onClick={() => onLinkClick(link)} className="btn btn-primary">
+          <button onClick={() => onLinkClick(link1)} className="btn btn-primary">
             Go to {title}
           </button>
         </div>
@@ -26,7 +26,7 @@ AccordionItem.propTypes = {
   content: PropTypes.node.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
-  link: PropTypes.string.isRequired,
+  link1: PropTypes.string.isRequired,
   onLinkClick: PropTypes.func.isRequired,
 };
 

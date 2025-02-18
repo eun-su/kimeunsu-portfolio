@@ -1,29 +1,19 @@
+/* PC 화면: 좌측 20vw 고정, 모든 메뉴는 기본적으로 닫힘 */
 #wrap {
   display: flex;
 }
 
 #navmenu {
   display: flex;
+  flex-direction: column;
   width: 20vw;
   position: fixed;
-  margin: 67px 0 0 0px;
+  margin-top: 67px;
 }
 
 .homeview {
   width: 80%;
 }
-
-/*
-.main {
-  display: flex;
-  justify-content: flex-end; 
-}
-*/
-
-/* flex-direction: row; */
-/* flex-wrap: nowrap; */
-/* justify-content: center; */
-/* overflow-x: hidden; */
 
 .accordion {
   width: 100%;
@@ -47,16 +37,24 @@
 }
 
 .accordion-body {
-  padding: 1em;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  padding: 0 1em;
   background-color: #fff;
 }
 
 .accordion-body.show {
-  display: block;
+  max-height: 500px; /* 충분한 크기로 조정 */
+  padding: 1em; /* 펼쳐질 때 패딩 추가 */
 }
 
-@media (max-width: 769px) {
+.accordion-footer {
+  margin-top: 10px; /* 버튼을 컨텐츠 아래로 이동 */
+}
+
+/* 모바일 화면 (768px 이하) */
+@media (max-width: 768px) {
   #navmenu {
     top: 0;
     left: 0;
@@ -64,8 +62,9 @@
     width: 100vw;
     background-color: #fff;
     text-align: center;
-    padding: 0 0 0 0;
+    padding: 0;
     z-index: 1000;
+    position: fixed;
   }
 
   .homeview {
@@ -80,9 +79,29 @@
     z-index: 1000;
     height: auto;
   }
-  
+
   .accordion-item {
-    width: 33%;
+    width: 33.33%;
     text-align: center;
+    position: relative;
+  }
+
+  .accordion-body {
+    display: none; /* 모바일에서는 기본적으로 숨김 */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  }
+
+  .accordion-footer {
+    margin-top: 20px; /* 모바일에서 버튼이 겹치지 않도록 추가 여백 */
+  }
+
+  .accordion-body.show {
+    display: block; /* max-height 대신 display 속성으로 처리 */
+    padding: 1em;
   }
 }
