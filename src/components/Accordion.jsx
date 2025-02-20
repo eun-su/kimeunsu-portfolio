@@ -30,6 +30,17 @@ function Accordion({ onLinkClick }) {
     } else {
       setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
     }
+
+    // 모바일에서 클릭한 아코디언 body의 위치를 변경
+    document.querySelectorAll('.accordion-body').forEach((body, idx) => {
+      body.classList.remove('show', 'first', 'second', 'third');
+      if (idx === index) {
+        body.classList.add('show');
+        if (index === 0) body.classList.add('first');
+        if (index === 1) body.classList.add('second');
+        if (index === 2) body.classList.add('third');
+      }
+    });
   };
 
   const items = [
@@ -62,7 +73,7 @@ function Accordion({ onLinkClick }) {
           links={item.links}
           onLinkClick={onLinkClick}
           isMobile={isMobile}
-          isActive={openIndex === index || item.links.includes(location.pathname)} // 현재 페이지에 해당하는 경우 active
+          isActive={openIndex === index || item.links.includes(location.pathname)}
           index={index} // index 값 전달
         />
       ))}
