@@ -1,6 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import AccordionItem from './AccordionItem';
 import { useLocation } from 'react-router-dom'; // 페이지 URL 가져오기
+
+const items = [
+  {
+    title: 'Accordion Item #1',
+    content: <strong>Bootstrap 5</strong>,
+    links: ['/page1', '/page1One', '/page1Two'],
+  },
+  {
+    title: 'Accordion Item #2',
+    content: <strong>This is the second item's accordion body.</strong>,
+    links: ['/page2', '/page2One', '/page2Two'],
+  },
+  {
+    title: 'Accordion Item #3',
+    content: <strong>This is the third item's accordion body.</strong>,
+    links: ['/page3', '/page3One', '/page3Two'],
+  },
+];
 
 function Accordion({ onLinkClick }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -16,15 +34,17 @@ function Accordion({ onLinkClick }) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const memoizedItems = useMemo(() => items, []);
+
   useEffect(() => {
     if (!isMobile) {
       // PC에서는 URL에 따라 자동으로 열릴 아코디언 설정
-      const activeIndex = items.findIndex((item) =>
+      const activeIndex = memoizedItems.findIndex((item) =>
         item.links.includes(location.pathname)
       );
       setOpenIndex(activeIndex);
     }
-  }, [location.pathname, isMobile]);
+  }, [location.pathname, isMobile, memoizedItems]);
 
   const handleClick = (index) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
@@ -40,24 +60,6 @@ function Accordion({ onLinkClick }) {
     }
     return className;
   };
-
-  const items = [
-    {
-      title: 'Accordion Item #1',
-      content: <strong>Bootstrap 5</strong>,
-      links: ['/page1', '/page1_1', '/page1_2'],
-    },
-    {
-      title: 'Accordion Item #2',
-      content: <strong>This is the second item's accordion body.</strong>,
-      links: ['/page2', '/page2_1', '/page2_2'],
-    },
-    {
-      title: 'Accordion Item #3',
-      content: <strong>This is the third item's accordion body.</strong>,
-      links: ['/page3', '/page3_1', '/page3_2'],
-    },
-  ];
 
   return (
     <div className="accordion">

@@ -3,7 +3,7 @@ import React from 'react';
 // import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-function Page3_2() {
+function Page3One() {
   return (
     <div>
       {/* <Header /> */}
@@ -15,4 +15,4 @@ function Page3_2() {
   );
 }
 
-export default Page3_2;
+export default Page3One;
