@@ -15,6 +15,7 @@
   width: 80%;
 }
 
+/* PC에서는 세로 정렬 */
 .accordion {
   width: 100%;
   height: 100vh;
@@ -25,10 +26,28 @@
   flex-direction: column;
 }
 
+@media (min-width: 769px) {
+  .accordion {
+    flex-direction: column !important; /* 강제 적용 */
+  }
+}
+
 .accordion-item {
   border-bottom: 1px solid #ddd;
 }
 
+/* 클릭된 아코디언 hover 효과 */
+.accordion-item.active {
+  background-color: #e6f2ff; /* 연한 파란색 배경 */
+}
+
+/* 현재 페이지와 관련된 버튼 스타일 */
+.button-container button.active {
+  background-color: #ffcc00; /* 노란색 강조 */
+  color: black;
+}
+
+/* 아코디언 제목 */
 .accordion-header {
   padding: 1em;
   background-color: #f7f7f7;
@@ -36,6 +55,7 @@
   user-select: none;
 }
 
+/* 기본적으로 숨김 처리 (display: none 대신 max-height로 제어) */
 .accordion-body {
   max-height: 0;
   overflow: hidden;
@@ -44,16 +64,48 @@
   background-color: #fff;
 }
 
+/* 펼쳐진 경우 */
 .accordion-body.show {
-  max-height: 500px; /* 충분한 크기로 조정 */
-  padding: 1em; /* 펼쳐질 때 패딩 추가 */
+  max-height: 500px;
+  padding: 1em;
+  text-align: left;
 }
 
 .accordion-footer {
-  margin-top: 10px; /* 버튼을 컨텐츠 아래로 이동 */
+  margin-top: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
-/* 모바일 화면 (768px 이하) */
+/* 버튼 스타일 */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  overflow-x: auto;
+}
+
+.button-container button {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.button-container button:hover {
+  background: #0056b3;
+}
+
+.button-container button.active {
+  background-color: #ffcc00; /* 노란색 강조 */
+  color: black;
+}
+
+/* 🟢 모바일 화면 (768px 이하) */
 @media (max-width: 768px) {
   #navmenu {
     top: 0;
@@ -71,12 +123,12 @@
     width: 100%;
   }
 
+  /* 모바일에서는 가로 정렬 */
   .accordion {
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    width: 100vw;
     background: white;
-    z-index: 1000;
     height: auto;
   }
 
@@ -87,21 +139,42 @@
   }
 
   .accordion-body {
-    display: none; /* 모바일에서는 기본적으로 숨김 */
     position: relative;
     top: 0;
     left: 0;
-    width: 100%;
+    transform: translateX(0%); /* 기본값 */
+    transition: transform 0.3s ease-in-out;
+    width: 100vw;
     background: white;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
-  }
-
-  .accordion-footer {
-    margin-top: 20px; /* 모바일에서 버튼이 겹치지 않도록 추가 여백 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: none; /* 기본적으로 숨김 */
   }
 
   .accordion-body.show {
-    display: block; /* max-height 대신 display 속성으로 처리 */
-    padding: 1em;
+    display: none; /* 클릭 시 보이게 설정 */
+  }
+
+  /* 클릭된 아코디언에 따라 이동 */
+  .accordion-body.show.first {
+    display: block;
+    transform: translateX(0%);
+  }
+  
+  .accordion-body.show.second {
+    display: block;
+    transform: translateX(-33%);
+  }
+  
+  .accordion-body.show.third {
+    display: block;
+    transform: translateX(-66%);
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 버튼을 중앙 정렬 */
+    padding: 10px;
   }
 }

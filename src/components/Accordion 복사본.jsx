@@ -1,34 +1,38 @@
-// src/components/Accordion.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AccordionItem from './AccordionItem';
-// import './Accordion.css';
 
 function Accordion({ onLinkClick }) {
-  const [openIndexes, setOpenIndexes] = useState([0]);
+  const [openIndex, setOpenIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleClick = (index) => {
-    setOpenIndexes((prevIndexes) =>
-      prevIndexes.includes(index)
-        ? prevIndexes.filter((i) => i !== index)
-        : [...prevIndexes, index]
-    );
+    setOpenIndex((prevIndex) => (isMobile ? (prevIndex === index ? null : index) : prevIndex === index ? null : index));
   };
 
   const items = [
     {
       title: 'Accordion Item #1',
       content: <strong>Bootstrap 5</strong>,
-      link1: '/page1',
+      link: '/page1',
     },
     {
       title: 'Accordion Item #2',
       content: <strong>This is the second item's accordion body.</strong>,
-      link1: '/page2',
+      link: '/page2',
     },
     {
       title: 'Accordion Item #3',
       content: <strong>This is the third item's accordion body.</strong>,
-      link1: '/page3',
+      link: '/page3',
     },
   ];
 
@@ -39,9 +43,9 @@ function Accordion({ onLinkClick }) {
           key={index}
           title={item.title}
           content={item.content}
-          isOpen={openIndexes.includes(index)}
+          isOpen={openIndex === index}
           onClick={() => handleClick(index)}
-          link={item.link1}
+          link={item.link}
           onLinkClick={onLinkClick}
         />
       ))}
