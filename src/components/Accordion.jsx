@@ -17,19 +17,28 @@ function Accordion({ onLinkClick }) {
   }, []);
 
   useEffect(() => {
-    // 현재 페이지 URL에 맞는 아코디언을 자동으로 열기
-    const activeIndex = items.findIndex((item) =>
-      item.links.includes(location.pathname)
-    );
-    setOpenIndex(activeIndex);
-  }, [location.pathname]);
+    if (!isMobile) {
+      // PC에서는 URL에 따라 자동으로 열릴 아코디언 설정
+      const activeIndex = items.findIndex((item) =>
+        item.links.includes(location.pathname)
+      );
+      setOpenIndex(activeIndex);
+    }
+  }, [location.pathname, isMobile]);
 
   const handleClick = (index) => {
-    if (isMobile) {
-      setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
-    } else {
-      setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  const getClassName = (index) => {
+    let className = 'accordion-body';
+    if (openIndex === index) {
+      className += ' show';
+      if (index === 0) className += ' first';
+      if (index === 1) className += ' second';
+      if (index === 2) className += ' third';
     }
+    return className;
   };
 
   const items = [
@@ -62,8 +71,9 @@ function Accordion({ onLinkClick }) {
           links={item.links}
           onLinkClick={onLinkClick}
           isMobile={isMobile}
-          isActive={openIndex === index || item.links.includes(location.pathname)} // 현재 페이지에 해당하는 경우 active
+          isActive={openIndex === index || item.links.includes(location.pathname)}
           index={index} // index 값 전달
+          className={getClassName(index)} // 클래스 자동 적용
         />
       ))}
     </div>

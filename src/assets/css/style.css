@@ -26,12 +26,6 @@
   flex-direction: column;
 }
 
-@media (min-width: 769px) {
-  .accordion {
-    flex-direction: column !important; /* 강제 적용 */
-  }
-}
-
 .accordion-item {
   border-bottom: 1px solid #ddd;
 }
@@ -57,6 +51,7 @@
 
 /* 기본적으로 숨김 처리 (display: none 대신 max-height로 제어) */
 .accordion-body {
+  display: none !important;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
@@ -66,6 +61,7 @@
 
 /* 펼쳐진 경우 */
 .accordion-body.show {
+  display: block !important;
   max-height: 500px;
   padding: 1em;
   text-align: left;
@@ -138,43 +134,53 @@
     position: relative;
   }
 
+  .accordion-item.active {
+    background-color: #e6f2ff; /* 🔹 클릭된 경우 배경색 변경 */
+  }
+
   .accordion-body {
     position: relative;
     top: 0;
     left: 0;
-    transform: translateX(0%); /* 기본값 */
+    transform: translateX(0%);
     transition: transform 0.3s ease-in-out;
     width: 100vw;
     background: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 999;
-    display: none; /* 기본적으로 숨김 */
-  }
-
-  .accordion-body.show {
-    display: none; /* 클릭 시 보이게 설정 */
+    display: none; /* 🚀 기본적으로 숨김 */
   }
 
   /* 클릭된 아코디언에 따라 이동 */
-  .accordion-body.show.first {
+  .accordion-body.show {
     display: block;
+  }
+
+  .accordion-body.show.first {
+    display: block !important;
     transform: translateX(0%);
   }
   
   .accordion-body.show.second {
-    display: block;
+    display: block !important;
     transform: translateX(-33%);
   }
   
   .accordion-body.show.third {
-    display: block;
+    display: block !important;
     transform: translateX(-66%);
   }
-  
+
   .button-container {
     display: flex;
     flex-direction: row;
     justify-content: center; /* 버튼을 중앙 정렬 */
     padding: 10px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+  .accordion-body.show {
+    display: block !important; /* ✅ 640px ~ 768px에서만 적용 */
   }
 }

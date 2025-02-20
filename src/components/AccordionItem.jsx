@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, isMobile, index }) {
   // index 값에 따라 클래스 설정
   const bodyClass = isMobile
-    ? `accordion-body show ${index === 0 ? 'first' : index === 1 ? 'second' : 'third'}`
+    ? `accordion-body ${isOpen ? 'show' : ''} ${index === 0 ? 'first' : index === 1 ? 'second' : 'third'}`
     : `accordion-body ${isOpen ? 'show' : ''}`;
 
   return (
