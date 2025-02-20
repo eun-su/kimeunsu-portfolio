@@ -26,12 +26,6 @@
   flex-direction: column;
 }
 
-@media (min-width: 769px) {
-  .accordion {
-    flex-direction: column !important; /* 강제 적용 */
-  }
-}
-
 .accordion-item {
   border-bottom: 1px solid #ddd;
 }
@@ -152,22 +146,19 @@
   }
 
   .accordion-body.show {
-    display: none; /* 클릭 시 보이게 설정 */
+    display: block; /* 클릭 시 보이게 설정 */
   }
 
   /* 클릭된 아코디언에 따라 이동 */
   .accordion-body.show.first {
-    display: block;
     transform: translateX(0%);
   }
   
   .accordion-body.show.second {
-    display: block;
     transform: translateX(-33%);
   }
   
   .accordion-body.show.third {
-    display: block;
     transform: translateX(-66%);
   }
   
