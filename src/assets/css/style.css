@@ -15,6 +15,12 @@
   width: 80%;
 }
 
+.page-main {
+  position: relative;
+  left: 21vw;
+  top:70px;
+}
+
 /* PC에서는 세로 정렬 */
 .accordion {
   width: 100%;

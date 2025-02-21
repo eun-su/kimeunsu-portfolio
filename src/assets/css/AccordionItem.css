@@ -1,0 +1,29 @@
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  
+  .accordion-body.show {
+    max-height: 500px; /* 충분히 큰 값으로 설정 */
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .fade-in {
+    animation: fadeInUp 0.4s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

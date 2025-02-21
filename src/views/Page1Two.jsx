@@ -1,18 +1,19 @@
-// src/pages/Page3.js
-import React from 'react';
-// import Header from '../components/Header';
+import React from "react";
+import styles from "../assets/css/Page.module.css";
+import BlogPage from '../components/BlogPage';
+import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
-function Page1Two() {
+const Page1Two = () => {
   return (
-    <div>
-      {/* <Header /> */}
-      <main className='main'>
-        <div>BootStrap 5</div>
+    <div className={styles.page1TwoContainer}>
+      <main className="page-main">
+        <BlogPage />
+        <Contact />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
-}
+};
 
 export default Page1Two;

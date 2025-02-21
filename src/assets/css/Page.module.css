@@ -1,0 +1,11 @@
+/* Page1Two.module.css */
+.page1TwoContainer .accordion {
+    all: unset; /* 기본 스타일 초기화 */
+  }
+  .page1TwoContainer .accordion-item {
+    border: 1px solid #ddd;
+  }
+  .page1TwoContainer .accordion-button {
+    background-color: #007bff;
+    color: white;
+  }  

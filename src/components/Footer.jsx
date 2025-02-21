@@ -7,8 +7,8 @@ const Footer = () => {
         <footer id="footer" role="contentinfo">
             <div className="footer__inner">
                 <h2 className="footer__text">
-                    <div>webstoryboy</div>
-                    <div>@webs</div>
+                    <div>KIM EUNSU</div>
+                    <div>@eunsu</div>
                 </h2>
                 <div className="footer__info">
                     <div className="left">
@@ -30,7 +30,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer__right">
-                    &copy; 2023 webstoryboy<br />
+                    &copy; 2024 kim eunsu<br />
                     이 사이트는 리액트를 이용하여 제작하였습니다.
                 </div>
             </div>

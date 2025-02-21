@@ -1,0 +1,118 @@
+/* src/pages/Page1.css */
+.page1-container {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 20px;
+  }
+  
+  .header {
+    grid-column: 1 / -1;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .intro-text {
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .intro-image {
+    background-color: #ddd;
+    padding: 20px;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* grid 홈페이지 */
+
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "sidebarLeft main sidebarRight"
+      "footer footer footer";
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 10px;
+    width: 78vw;
+    height: 100vh;
+  }
+  
+  .grid-header {
+    grid-area: header;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .grid-nav {
+    grid-area: nav;
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .grid-sidebarLeft {
+    grid-area: sidebarLeft;
+    background-color: #ccc;
+    padding: 15px;
+  }
+  
+  .grid-main {
+    grid-area: main;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .grid-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .section-box {
+    background-color: #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .grid-sidebarRight {
+    grid-area: sidebarRight;
+    background-color: #ccc;
+    padding: 15px;
+  }
+  
+  .grid-footer {
+    grid-area: footer;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  

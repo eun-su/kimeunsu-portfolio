@@ -7,10 +7,10 @@ function Page2Two() {
   return (
     <div>
       {/* <Header /> */}
-      <main className='main'>
-        <div>BootStrap 5</div>
+      <main className='page-main'>
+        <div>jQuery</div>
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

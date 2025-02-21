@@ -1,7 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import '../assets/css/AccordionItem.css'; // 애니메이션을 위한 CSS 파일 추가
 
 function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, isMobile, index }) {
+  // 페이지별 버튼 이름 지정
+  const buttonNames = {
+    '/page1': 'display : grid',
+    '/page1One': 'display : flex',
+    '/page1Two': 'Modal',
+    '/page2': 'Page 2',
+    '/page2One': 'Calendar',
+    '/page2Two': 'Page 2-2',
+    '/page3': 'Page 3',
+    '/page3One': 'Page 3-1',
+    '/page3Two': 'Page 3-2',
+  };
+
   // index 값에 따라 클래스 설정
   const bodyClass = isMobile
     ? `accordion-body ${isOpen ? 'show' : ''} ${index === 0 ? 'first' : index === 1 ? 'second' : 'third'}`
@@ -20,9 +34,9 @@ function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, is
               <button
                 key={idx}
                 onClick={() => onLinkClick(link)}
-                className="btn btn-primary"
+                className="btn btn-primary fade-in" // 애니메이션 클래스 추가
               >
-                {title} - {idx + 1}
+                {buttonNames[link] || `${title} - ${idx + 1}`}
               </button>
             ))}
           </div>
@@ -40,7 +54,7 @@ AccordionItem.propTypes = {
   links: PropTypes.arrayOf(PropTypes.string).isRequired,
   onLinkClick: PropTypes.func.isRequired,
   isMobile: PropTypes.bool.isRequired,
-  index: PropTypes.number.isRequired, // index 추가
+  index: PropTypes.number.isRequired,
 };
 
 export default AccordionItem;

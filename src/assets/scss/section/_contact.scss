@@ -1,5 +1,6 @@
 #contact {
-    height: 100vh;
+    height: auto;
+    margin: 10vw 0 0 0;
 }
 .contact__inner {
     width: 100%;
@@ -17,7 +18,7 @@
     .contact__title {
         font-size: 10vw;
         text-transform: uppercase;
-        line-height: 1;
+        line-height: 1.2;
         font-weight: 800;
         white-space: nowrap;
         text-indent: -0.5vw;
@@ -29,7 +30,7 @@
     }
     .contact__text {
         width: 100%;
-        height: 40vh;
+        height: 30vh;
         background-color: var(--black);
         color: var(--white);
         display: flex;
@@ -37,6 +38,7 @@
         justify-content: center;
         flex-direction: column;
         position: relative;
+        padding: 5vw;
 
         .text {
             font-size: 3vw;

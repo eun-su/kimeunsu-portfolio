@@ -1,6 +1,6 @@
 # 김은수 포트폴리오 사이트 만들기 프로젝트
 
-→ https://eunsureact.netlify.app
+→ https://kimeunsu.netlify.app
 → https://eunsux.github.io 
 → https://eun-su.github.io
 

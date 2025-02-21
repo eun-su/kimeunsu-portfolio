@@ -1,0 +1,96 @@
+/* 네비게이션 */
+.flex-navbar {
+    background-color: #343a40;
+    padding: 10px 0;
+  }
+  .flex-navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  .flex-navbar-nav {
+    list-style: none;
+    padding: 0;
+  }
+  .flex-nav-item {
+    display: inline;
+    margin-right: 15px;
+  }
+  .flex-nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  .flex-nav-link:hover {
+    color: #f8f9fa;
+  }
+  
+  /* 헤더 */
+  .flex-header {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .flex-header h1 {
+    font-size: 2.5rem;
+  }
+  .flex-header p {
+    font-size: 1.2rem;
+  }
+  
+  /* Flexbox 설명 섹션 */
+  .flex-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .flex-item {
+    background: #0d6efd;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+  }
+  
+  /* Flex 속성 예제 */
+  .flex-example {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+  }
+  .flex-box {
+    padding: 20px;
+    background: #6c757d;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+  }
+  .flex-box.row {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex-box.column {
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-box.wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* 푸터 */
+  .flex-footer {
+    background-color: #212529;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }  

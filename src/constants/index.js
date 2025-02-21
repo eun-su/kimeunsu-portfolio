@@ -194,30 +194,30 @@ export const portText = [
 
 export const contactText = [
     {
-        link: "https://open.kakao.com/o/gM7YLzwf",
-        title: "KAKAO : webstupids",
+        link: "https://open.kakao.com/me/eunsuu",
+        title: "KAKAO ID : eunsuo",
     },
     {
-        link: "mailto:webstoryboy@naver.com",
-        title: "mail : webstoryboy@naver.com",
+        link: "eunsuo@naver.com",
+        title: "mail : eunsuo@naver.com",
     },
 ];
 
 export const footerText = [
     {
-        title: "youtube",
-        desc: "유튜브에 오시면 더 많은 강의를 볼 수 있습니다.",
-        link: "https://www.youtube.com/@Webstoryboy",
+        title: "instagram",
+        desc: "김은수의 취미생활과 일상을 볼 수 있습니다",
+        link: "https://www.instagram.com/eu_nsu",
     },
     {
         title: "github",
         desc: "깃헙에 오시면 더 많은 소스를 볼 수 있습니다.",
-        link: "https://github.com/webstoryboy",
+        link: "https://github.com/eun-su",
     },
     {
         title: "blog",
         desc: "블러그에 오시면 더 많은 정보를 볼 수 있습니다.",
-        link: "https://webstoryboy.co.kr",
+        link: "https://blog.naver.com/eunsuo",
     },
     {
         title: "gsap",
