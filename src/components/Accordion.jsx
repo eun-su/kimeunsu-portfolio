@@ -4,17 +4,17 @@ import { useLocation } from 'react-router-dom'; // 페이지 URL 가져오기
 
 const items = [
   {
-    title: 'CSS',
-    content: <strong>Bootstrap 5</strong>,
+    title: 'Bootstrap 5',
+    content: <strong>Example page using CSS and HTML</strong>,
     links: ['/page1', '/page1One', '/page1Two'],
   },
   {
-    title: 'jQuery',
-    content: <strong>This is the second item's accordion body.</strong>,
+    title: 'JavaScript Library',
+    content: <strong>jQuery</strong>,
     links: ['/page2', '/page2One', '/page2Two'],
   },
   {
-    title: 'JavaScript',
+    title: 'Telerik',
     content: <strong>This is the third item's accordion body.</strong>,
     links: ['/page3', '/page3One', '/page3Two'],
   },

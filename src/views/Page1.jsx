@@ -10,7 +10,10 @@ function Page1() {
       {/* <Header /> */}
       <main className='page-main'>
         <div className="page1-container">
-          <header className="header">Header Section</header>
+          <header className="page1-header">
+            <h1>grid</h1>
+            <h3>css</h3>
+          </header>
             <section className="intro">
               <div className="intro-text">Introduction Text</div>
               <div className="intro-image">Image Placeholder</div>

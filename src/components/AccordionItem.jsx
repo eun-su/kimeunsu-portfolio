@@ -8,7 +8,7 @@ function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, is
     '/page1': 'display : grid',
     '/page1One': 'display : flex',
     '/page1Two': 'Modal',
-    '/page2': 'Page 2',
+    '/page2': 'Gallery',
     '/page2One': 'Calendar',
     '/page2Two': 'Page 2-2',
     '/page3': 'Page 3',

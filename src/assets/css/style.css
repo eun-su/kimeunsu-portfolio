@@ -125,6 +125,12 @@
     width: 100%;
   }
 
+  .page-main {
+    position: relative;
+    left: 0;
+    top:30vh;
+  }
+
   /* 모바일에서는 가로 정렬 */
   .accordion {
     flex-direction: row;
