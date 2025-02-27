@@ -7,10 +7,10 @@ function Page3() {
   return (
     <div>
       {/* <Header /> */}
-      <main>
+      <main className='page-main'>
         <div>This is Page 3</div>
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

@@ -7,10 +7,10 @@ function Page3One() {
   return (
     <div>
       {/* <Header /> */}
-      <main className='main'>
+      <main className='page-main'>
         <div>BootStrap 5</div>
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

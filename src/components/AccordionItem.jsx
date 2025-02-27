@@ -14,6 +14,9 @@ function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, is
     '/page3': 'Page 3',
     '/page3One': 'Page 3-1',
     '/page3Two': 'Page 3-2',
+    '/page4': 'Resampling', // 추가된 항목
+    '/page4One': 'Component Test',
+    '/page4Two': 'ETC',
   };
 
   // index 값에 따라 클래스 설정

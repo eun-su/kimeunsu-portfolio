@@ -49,7 +49,7 @@
 
 /* 아코디언 제목 */
 .accordion-header {
-  padding: 1em;
+  padding: 1em 1em;
   background-color: #f7f7f7;
   cursor: pointer;
   user-select: none;
@@ -150,6 +150,14 @@
     background-color: #e6f2ff; /* 🔹 클릭된 경우 배경색 변경 */
   }
 
+  .accordion-item:nth-child(4) {
+    display: none !important;
+  }
+
+  .accordion-header {
+    padding: 1em 0.1em;
+  }
+
   .accordion-body {
     position: relative;
     top: 0;
@@ -179,6 +187,11 @@
   }
   
   .accordion-body.show.third {
+    display: block !important;
+    transform: translateX(-66%);
+  }
+
+  .accordion-body.show.fourth {
     display: block !important;
     transform: translateX(-66%);
   }

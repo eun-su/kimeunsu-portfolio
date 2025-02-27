@@ -6,14 +6,17 @@ import NavMenu from "./components/NavMenu";
 import Accordion from "./components/Accordion";
 import HomeView from "./views/HomeView";
 import Page1 from "./views/Page1";
-import Page2 from "./views/Page2";
-import Page3 from "./views/Page3";
 import Page1One from "./views/Page1One"; 
 import Page1Two from "./views/Page1Two"; 
+import Page2 from "./views/Page2";
 import Page2One from "./views/Page2One"; 
 import Page2Two from "./views/Page2Two"; 
+import Page3 from "./views/Page3";
 import Page3One from "./views/Page3One"; 
 import Page3Two from "./views/Page3Two"; 
+import Page4 from "./views/Page4";
+import Page4One from "./views/Page4One"; 
+import Page4Two from "./views/Page4Two"; 
 
 import ScrollToTop from "./utils/ScrollToTop";
 import smooth from "./utils/smooth";
@@ -63,6 +66,9 @@ function PageTransitionWrapper() {
           <Route path="/page3" element={<Page3 />} />
           <Route path="/page3One" element={<Page3One />} />
           <Route path="/page3Two" element={<Page3Two />} />
+          <Route path="/page4" element={<Page4 />} /> {/* 가된 페이지 */}
+          <Route path="/page4One" element={<Page4One />} />
+          <Route path="/page4Two" element={<Page4Two />} />
         </Routes>
       </main>
     </div>

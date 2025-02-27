@@ -3,13 +3,12 @@ import '../assets/css/Page2.css';
 
 const MoreContent = ({ data, itemsPerPage = 6 }) => {
   const [visibleItems, setVisibleItems] = useState(itemsPerPage);
-  const [showButton, setShowButton] = useState(true); // 버튼 표시 여부
+  const [showButton, setShowButton] = useState(true);
 
   const loadMore = () => {
     const newVisibleItems = visibleItems + itemsPerPage;
     setVisibleItems(newVisibleItems);
 
-    // 모든 아이템이 표시되면 버튼 숨기기
     if (newVisibleItems >= data.length) {
       setShowButton(false);
     }
@@ -18,8 +17,10 @@ const MoreContent = ({ data, itemsPerPage = 6 }) => {
   return (
     <div className="more-content">
       <ul className="content-list">
-        {data.slice(0, visibleItems).map((item, index) => (
-          <li key={index} className="content-item" style={{ display: "block" }}>
+        {data.map((item, index) => (
+          <li key={index} 
+              className={`content-item ${index < visibleItems ? "visible" : ""}`} 
+              style={{ transitionDelay: `${(index % itemsPerPage) * 0.1}s` }}>
             <img src={item.img} alt={item.title} className="content-img" />
             <h3 className="content-title">{item.title}</h3>
             <h4 className="content-subtitle">{item.subtitle}</h4>

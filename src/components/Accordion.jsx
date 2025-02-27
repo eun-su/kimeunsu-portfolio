@@ -18,6 +18,11 @@ const items = [
     content: <strong>This is the third item's accordion body.</strong>,
     links: ['/page3', '/page3One', '/page3Two'],
   },
+  {
+    title: 'Test', // 아코디언 추가
+    content: <strong>Test Place</strong>,
+    links: ['/page4', '/page4One', '/page4Two'], // 해당되는 페이지 링크 추가
+  },
 ];
 
 function Accordion({ onLinkClick }) {
@@ -57,6 +62,7 @@ function Accordion({ onLinkClick }) {
       if (index === 0) className += ' first';
       if (index === 1) className += ' second';
       if (index === 2) className += ' third';
+      if (index === 2) className += ' fourth'; // 아코디언 추가
     }
     return className;
   };
