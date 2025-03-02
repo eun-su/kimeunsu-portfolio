@@ -1,13 +1,42 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { headerNav } from "../constants";
 
 const Header = () => {
     const [show, setShow] = useState(false);
+    const [sectionTitles, setSectionTitles] = useState([]);
+    const location = useLocation();
+
+    useEffect(() => {
+        const updateTitles = () => {
+            const titles = Array.from(document.querySelectorAll(".section-title")).map((el) => ({
+                id: el.id,
+                text: el.innerText
+            }));
+            setSectionTitles(titles);
+        };
+
+        // 페이지 이동 시 네비게이션 업데이트
+        setTimeout(updateTitles, 100);
+
+        // 커스텀 이벤트 리스너 추가
+        window.addEventListener("updateHeader", updateTitles);
+
+        return () => {
+            window.removeEventListener("updateHeader", updateTitles);
+        };
+    }, [location.pathname]);
 
     const toggleMenu = () => {
         setShow((prevShow) => !prevShow);
-    }
+    };
+
+    const handleScrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
 
     return (
         <header id="header" role="banner">
@@ -17,33 +46,29 @@ const Header = () => {
                         <a href="/">KIM EUNSU<em>PORTFOLIO</em></a>
                     </h1>
                 </div>
-                <nav 
-                    className={`header__nav ${show ? "show" : ""}`} 
-                    role="navigation" 
-                    aria-label="메인메뉴"
-                >
+                <nav className={`header__nav ${show ? "show" : ""}`} role="navigation" aria-label="메인메뉴">
                     <ul>
-                        {headerNav.map((nav, key) => (
-                            <li key={key}>
-                                <a href={nav.url}>{nav.title}</a>
-                            </li>
-                        ))}
+                        {sectionTitles.length > 0 ? (
+                            sectionTitles.map((section) => (
+                                <li key={section.id}>
+                                    <button onClick={() => handleScrollToSection(section.id)}>{section.text}</button>
+                                </li>
+                            ))
+                        ) : (
+                            headerNav.map((nav, key) => (
+                                <li key={key}>
+                                    <a href={nav.url}>{nav.title}</a>
+                                </li>
+                            ))
+                        )}
                     </ul>
                 </nav>
-                <div 
-                    className="header__nav__mobile" 
-                    id="headerToggle" 
-                    aria-controls="primary-menu" 
-                    aria-expanded={show ? "true" : "false"} 
-                    role="button"
-                    tabIndex="0"
-                    onClick={toggleMenu}
-                >
+                <div className="header__nav__mobile" id="headerToggle" aria-controls="primary-menu" aria-expanded={show ? "true" : "false"} role="button" tabIndex="0" onClick={toggleMenu}>
                     <span></span>
                 </div>
             </div>
         </header>
-    )
-}
+    );
+};
 
 export default Header;

@@ -1,60 +1,138 @@
-/* src/pages/Page1.css */
-.page1-container {
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    gap: 20px;
-    padding: 0 10px;
-  }
-  
-  .page1-header {
-    grid-column: 1 / -1;
-    color: #333;
-    padding: 20px;
-    text-align: left;
-  }
-  
-  .intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  
-  .intro-text {
-    background-color: #f4f4f4;
-    padding: 20px;
-  }
-  
-  .intro-image {
-    background-color: #ddd;
-    padding: 20px;
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .gallery-item {
-    background-color: #ccc;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* grid 홈페이지 */
 
-  .grid-container {
-    display: grid;
-    grid-template-areas:
-      "header header header"
-      "nav nav nav"
-      "sidebarLeft main sidebarRight"
-      "footer footer footer";
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: auto auto 1fr auto;
-    gap: 10px;
-    height: 100vh;
+/* 탭 메뉴 스타일 */
+.tab-menu { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+.tab-menu button {width: 24%;padding: 10px 5px; border: none; background-color: #ddd; cursor: pointer; transition: all 0.3s ease; }
+.tab-menu button.active { background-color: #007bff; color: white; font-weight: bold; }
+.tab-header { grid-area: header; background-color: #333; color: white; text-align: center; padding: 30px; width: 78vw; }
+
+/* 탭 내용 스타일 */
+.tab-content { margin-top: 20px; padding: 20px; border-radius: 5px; text-align: center; }
+.tab-content-p { padding: 10px; }
+.tab-content ul { list-style-type: none; padding: 0; }
+.tab-content li { display: inline-block; margin: 5px; padding: 5px 10px; border-radius: 3px; border: 1px solid #ccc; }
+
+/* src/pages/Page1.css */
+.page1-container { display: grid; grid-template-rows: auto auto 1fr auto; gap: 20px; padding: 0 10px; width: 78vw; }
+.page1-header { grid-column: 1 / -1; color: #333; padding: 20px; text-align: left;}
+.intro { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  
+.intro-text { background-color: #f4f4f4; padding: 20px; }
+.intro-image { background-color: #ddd; padding: 20px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+.gallery-item { background-color: #ccc; padding: 20px; text-align: center; }
+  
+/* 크기 조절 핸들러 */
+.resizer {
+  width: 15px;
+  height: 15px;
+  background-color: #007bff;
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  cursor: nwse-resize;
+  border-radius: 50%;
+}
+
+/* 가로 길이 조절 기능을 독립적으로 추가 */
+.resizable-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
+}
+
+/* 크기 조절 가능한 컨테이너 */
+.resizable-container {
+  position: relative;
+  border: 2px solid #444;
+  padding: 10px;
+  background-color: #fff;
+  max-width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  min-height: 80vh; /* 최소 높이 추가 */
+}
+
+/* 크기 조절 가능한 박스 */
+.resizable-box {
+  resize: both;
+  overflow: hidden;
+  min-width: 300px;
+  min-height: 300px;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* 크기 조절 핸들러 */
+.resizer-area {
+  width: 20px;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.5);
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resizer-area:hover {
+  background-color: rgba(0, 123, 255, 0.8);
+}
+
+/* 화살표 애니메이션 */
+.resize-arrow {
+  width: 40px;
+  height: 120px; /* 세로 3개 배치 */
+  background-image: url('../img/arrow.svg'),
+                    url('../img/arrow.svg'),
+                    url('../img/arrow.svg'); /* 이미지 3개 */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top, center, bottom;
+  position: relative;
+  right: 22px;
+  opacity: 1;
+  animation: moveArrow 1.5s ease-in-out infinite alternate, fadeOut 2s ease-in-out 8s forwards;
+  transform: scaleX(-1); /* ← 좌우 반전 적용 */
+}
+
+.resize-arrow.show {
+  opacity: 1;
+}
+
+@keyframes moveArrow {
+  0% {
+    transform: translateX(0);
   }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* grid 홈페이지 */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "sidebarLeft main sidebarRight"
+    "footer footer footer";
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 10px;
+  height: 100vh;
+}
   
   .grid-header {
     grid-area: header;
@@ -115,3 +193,109 @@
     padding: 20px;
   }
   
+@media (max-width: 1348px) {
+  .resizable-wrapper {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100vw;
+    min-height: 100vh; /* 최소 높이 추가 */
+  }
+
+  .resizable-box {
+    resize: both;
+    overflow: hidden;
+    width: 100% !important;
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+
+  .resizable-container {
+    width: 78vw;
+    max-width: 100%;
+  }
+}
+
+/* 768px 이하 화면에서 가로 길이를 100%로 설정 */
+@media (max-width: 768px) {
+  .page1-container,
+  .grid-container {
+    width: 100vw;
+    padding: 0;
+  }
+
+  /* 탭 메뉴 버튼이 전체 너비를 가질 수 있도록 */
+  .tab-menu {
+    flex-wrap: wrap;
+  }
+
+  .tab-menu button {
+    width: 100%; /* 한 줄에 하나씩 표시되도록 */
+  }
+  .tab-header { width: 100vw; }
+
+  .resizable-wrapper {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    min-height: 100vh; /* 최소 높이 추가 */
+  }
+  
+  .resizable-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: 95%;
+  }
+  
+  /* grid-template-columns 설정을 1열로 변경 */
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "sidebarLeft"
+      "sidebarRight"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    min-height: 100vh; /* 최소 높이 추가 */
+  }
+
+  .resizable-wrapper {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh; /* 최소 높이 추가 */
+  }
+
+  .grid-header,
+  .grid-nav,
+  .grid-sidebarLeft,
+  .grid-sidebarRight,
+  .grid-main,
+  .grid-footer {
+    width: 100%;
+  }
+
+  /* main 내부의 grid-section도 전체 너비로 설정 */
+  .grid-main {
+    padding: 10px;
+  }
+
+  .grid-section {
+    grid-template-columns: 1fr; /* 한 줄로 설정 */
+    width: 100%;
+  }
+
+  .grid-footer {
+    margin-top: auto; /* footer를 화면 하단에 배치 */
+  }
+
+  .section-box {
+    width: 100%;
+  }
+}

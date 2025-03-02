@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom'; // 페이지 URL 가져오기
 const items = [
   {
     title: 'Bootstrap 5',
-    content: <strong>Example page using CSS and HTML</strong>,
+    content: <strong>Example page using CSS and HTML with Bootstrap 5</strong>,
     links: ['/page1', '/page1One', '/page1Two'],
   },
   {

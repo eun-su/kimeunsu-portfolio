@@ -1,10 +1,17 @@
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }  
+
 #port {
     width: 100%;
-    margin-top: 30vh;
-    // overflow: hidden;
+    margin-top: 0vh;
+    overflow-x: hidden;
 }
+
 .port__inner {
     padding: 16px;
+    overflow: hidden;
 
     .port__title {
         width: 100%;
@@ -18,6 +25,7 @@
         border-bottom: 0.4vw solid var(--black100);
         margin-bottom: 16px;
         text-indent: -0.26vw;
+        text-align: left;
 
         em {
             font-size: 1.25rem;

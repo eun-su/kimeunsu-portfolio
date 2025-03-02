@@ -1,211 +1,67 @@
-/* PC 화면: 좌측 20vw 고정, 모든 메뉴는 기본적으로 닫힘 */
-#wrap {
-  display: flex;
-}
-
-#navmenu {
-  display: flex;
-  flex-direction: column;
-  width: 20vw;
-  position: fixed;
-  margin-top: 67px;
-}
-
-.homeview {
-  width: 80%;
-}
-
-.page-main {
+/* Google Font 적용 */
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;400;700&display=swap');
+html {font-size: 10px;}
+ul,ol,li {list-style: none;}
+a {text-decoration: none; color: #222; display: inline-block;}
+.header__nav li button {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 1rem;
   position: relative;
-  left: 21vw;
-  top:70px;
-}
-
-/* PC에서는 세로 정렬 */
-.accordion {
-  width: 100%;
-  height: 100vh;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.accordion-item {
-  border-bottom: 1px solid #ddd;
-}
-
-/* 클릭된 아코디언 hover 효과 */
-.accordion-item.active {
-  background-color: #e6f2ff; /* 연한 파란색 배경 */
-}
-
-/* 현재 페이지와 관련된 버튼 스타일 */
-.button-container button.active {
-  background-color: #ffcc00; /* 노란색 강조 */
-  color: black;
-}
-
-/* 아코디언 제목 */
-.accordion-header {
-  padding: 1em 1em;
-  background-color: #f7f7f7;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* 기본적으로 숨김 처리 (display: none 대신 max-height로 제어) */
-.accordion-body {
-  display: none !important;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
-  padding: 0 1em;
-  background-color: #fff;
-}
-
-/* 펼쳐진 경우 */
-.accordion-body.show {
-  display: block !important;
-  max-height: 500px;
-  padding: 1em;
-  text-align: left;
-}
-
-.accordion-footer {
-  margin-top: 10px;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-/* 버튼 스타일 */
-.button-container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 5px;
-  overflow-x: auto;
-}
-
-.button-container button {
-  flex: 0 0 auto;
-  padding: 8px 12px;
   border: none;
-  background: #007bff;
-  color: white;
+  outline: none;
+  background-color: inherit ;
   cursor: pointer;
-  border-radius: 4px;
 }
 
-.button-container button:hover {
-  background: #0056b3;
-}
+/* PC 화면: 좌측 20vw 고정, 모든 메뉴는 기본적으로 닫힘 */
+#wrap { display: flex; }
+#navmenu { display: flex; flex-direction: column; width: 20vw; position: fixed; margin-top: 80px; }
+.homeview { width: 80%; }
+.page-main { position: relative; left: 21vw; top: 80px; }
+.accordion { width: 100%; height: 100vh; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+.accordion-item { border-bottom: 1px solid #ddd; }
+.accordion-item.active { background-color: #e6f2ff; }
+.button-container button.active { background-color: #ffcc00; color: black; }
+.accordion-header { padding: 1em 1em; background-color: #f7f7f7; cursor: pointer; user-select: none; }
+.accordion-body { display: none !important; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; padding: 0 1em; background-color: #fff; }
+.accordion-body.show { display: block !important; max-height: 500px; padding: 1em; text-align: left; }
+.accordion-footer { margin-top: 10px; overflow-x: auto; white-space: nowrap; }
+.button-container { display: flex; flex-direction: column; gap: 5px; padding: 5px; overflow-x: auto; }
+.button-container button { flex: 0 0 auto; padding: 8px 12px; border: none; background: #007bff; color: white; cursor: pointer; border-radius: 4px; }
+.button-container button:hover { background: #0056b3; }
 
-.button-container button.active {
-  background-color: #ffcc00; /* 노란색 강조 */
-  color: black;
-}
+/* 제목 소제목 설명 스타일 */
+.title-box { display: flex; align-items: center; justify-content: flex-start; font-family: 'Gemunu Libre', sans-serif; margin:100px 10px 10px 10px; }
+.title-text { font-size: 32px; font-weight: 700; color: #333; margin-right: 10px; }
+.titleLink-none { font-size: 0px; opacity: 0; }
+.subtitle-text { font-size: 20px; font-weight: 200; color: #666; }
+.title-bar { content: ''; display: block; width: 1rem; height: 1px; background-color: #ccc; margin: 0 10px 0 5px; }
+.title-divider { width: 100%; height: 2px; max-width: 78vw; background-color: #ccc; margin: 5px 0; }
+.description-box { width: 100%; max-width: 78vw; background-color: #d3d3d3; color: #808080; border-radius: 10px; padding: 15px; font-size: 16px; margin: 10px 10px 10px 0; }
 
-/* 🟢 모바일 화면 (768px 이하) */
 @media (max-width: 768px) {
-  #navmenu {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    background-color: #fff;
-    text-align: center;
-    padding: 0;
-    z-index: 1000;
-    position: fixed;
-  }
+  #navmenu { top: 0; left: 0; right: 0; width: 100vw; background-color: #fff; text-align: center; padding: 0; z-index: 1000; position: fixed; margin-top: 67px; }
+  .homeview { width: 100%; }
+  .page-main { position: relative; left: 0; top: 30vh; }
+  .accordion { flex-direction: row; justify-content: space-between; width: 100vw; background: white; height: auto; }
+  .accordion-item { width: 33.33%; text-align: center; position: relative; }
+  .accordion-item.active { background-color: #e6f2ff; }
+  .accordion-item:nth-child(4) { display: none !important; }
+  .accordion-header { padding: 1em 0.1em; }
+  .accordion-body { position: relative; top: 0; left: 0; transform: translateX(0%); transition: transform 0.3s ease-in-out; width: 100vw; background: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); z-index: 999; display: none; }
+  .accordion-body.show { display: block; }
+  .accordion-body.show.first { display: block !important; transform: translateX(0%); }
+  .accordion-body.show.second { display: block !important; transform: translateX(-33%); }
+  .accordion-body.show.third { display: block !important; transform: translateX(-66%); }
+  .accordion-body.show.fourth { display: block !important; transform: translateX(-66%); }
+  .button-container { display: flex; flex-direction: row; justify-content: center; padding: 10px; }
 
-  .homeview {
-    width: 100%;
-  }
+  .title-divider { max-width: 95vw; height: 2px; margin: 2vw 2vw; }
+  .description-box { max-width: 95vw; padding: 15px; font-size: 16px; margin: 2vw 2vw; }
 
-  .page-main {
-    position: relative;
-    left: 0;
-    top:30vh;
-  }
-
-  /* 모바일에서는 가로 정렬 */
-  .accordion {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100vw;
-    background: white;
-    height: auto;
-  }
-
-  .accordion-item {
-    width: 33.33%;
-    text-align: center;
-    position: relative;
-  }
-
-  .accordion-item.active {
-    background-color: #e6f2ff; /* 🔹 클릭된 경우 배경색 변경 */
-  }
-
-  .accordion-item:nth-child(4) {
-    display: none !important;
-  }
-
-  .accordion-header {
-    padding: 1em 0.1em;
-  }
-
-  .accordion-body {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: translateX(0%);
-    transition: transform 0.3s ease-in-out;
-    width: 100vw;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    display: none; /* 🚀 기본적으로 숨김 */
-  }
-
-  /* 클릭된 아코디언에 따라 이동 */
-  .accordion-body.show {
-    display: block;
-  }
-
-  .accordion-body.show.first {
-    display: block !important;
-    transform: translateX(0%);
-  }
-  
-  .accordion-body.show.second {
-    display: block !important;
-    transform: translateX(-33%);
-  }
-  
-  .accordion-body.show.third {
-    display: block !important;
-    transform: translateX(-66%);
-  }
-
-  .accordion-body.show.fourth {
-    display: block !important;
-    transform: translateX(-66%);
-  }
-
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* 버튼을 중앙 정렬 */
-    padding: 10px;
-  }
 }
 
 @media (min-width: 640px) and (max-width: 768px) {
-  .accordion-body.show {
-    display: block !important; /* ✅ 640px ~ 768px에서만 적용 */
-  }
+  .accordion-body.show { display: block !important; }
 }

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, isMobile, index }) {
   // 페이지별 버튼 이름 지정
   const buttonNames = {
-    '/page1': 'display : grid',
+    '/page1': 'Tab Menu And Grid',
     '/page1One': 'display : flex',
     '/page1Two': 'Modal',
     '/page2': 'Gallery',
