@@ -1,0 +1,69 @@
+/* 🏷️ Breadcrumb 컨테이너 */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: 78vw;
+  }
+  
+  /* 📌 각 Breadcrumb 아이템 */
+  .breadcrumb li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #333;
+    padding: 0 8px;
+  }
+  
+  /* 🔗 링크 스타일 */
+  .breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  
+  .breadcrumb a:hover {
+    color: #0056b3;
+  }
+  
+  /* 🏹 화살표 아이콘 (img/arrow.svg) */
+  .breadcrumb li::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 8px;
+    background-image: url('../img/arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  /* 🔥 마지막 아이템은 화살표 제거 */
+  .breadcrumb li:last-child::after {
+    display: none;
+  }
+  
+  /* 📱 모바일 반응형 (768px 이하) */
+  @media (max-width: 768px) {
+    .breadcrumb {
+        display: none;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+  
+    .breadcrumb li {
+        padding: 0 5px;
+    }
+  
+    .breadcrumb li::after {
+        width: 10px;
+        height: 10px;
+    }
+  }
+  

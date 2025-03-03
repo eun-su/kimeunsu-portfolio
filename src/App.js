@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes, useNavigate, useLocation } from "react-router-dom";
+import gsap from "gsap";
 
 import Header from "./components/Header";
 import NavMenu from "./components/NavMenu";
@@ -27,13 +28,21 @@ function usePageTransition() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const loaderRef = useRef(null);
 
   const handleTransition = (path) => {
     setIsTransitioning(true);
+
+    // ✅ GSAP 애니메이션: 로딩 박스 등장 (오른쪽 → 왼쪽)
+    gsap.to(loaderRef.current, { x: "0%", duration: 0.5, ease: "power2.out" });
+
     setTimeout(() => {
       navigate(path);
       setTimeout(() => {
         setIsTransitioning(false);
+
+        // ✅ GSAP 애니메이션: 로딩 박스 사라짐 (왼쪽 → 오른쪽)
+        gsap.to(loaderRef.current, { x: "100%", duration: 0.5, ease: "power2.in" });
       }, 500);
     }, 500);
   };
@@ -42,11 +51,11 @@ function usePageTransition() {
     setIsTransitioning(false);
   }, [location]);
 
-  return { isTransitioning, handleTransition };
+  return { isTransitioning, handleTransition, loaderRef };
 }
 
 function PageTransitionWrapper() {
-  const { isTransitioning, handleTransition } = usePageTransition();
+  const { isTransitioning, handleTransition, loaderRef } = usePageTransition();
 
   return (
     <div id="wrap">
@@ -54,6 +63,10 @@ function PageTransitionWrapper() {
       <NavMenu>
         <Accordion onLinkClick={handleTransition} />
       </NavMenu>
+
+      {/* ✅ 로딩 애니메이션 박스 */}
+      <div ref={loaderRef} className="page-loader"></div>
+
       <main className={isTransitioning ? 'fade-out' : 'fade-in'}>
         <Routes>
           <Route path="/" element={<HomeView />} />
@@ -66,7 +79,7 @@ function PageTransitionWrapper() {
           <Route path="/page3" element={<Page3 />} />
           <Route path="/page3One" element={<Page3One />} />
           <Route path="/page3Two" element={<Page3Two />} />
-          <Route path="/page4" element={<Page4 />} /> {/* 가된 페이지 */}
+          <Route path="/page4" element={<Page4 />} />
           <Route path="/page4One" element={<Page4One />} />
           <Route path="/page4Two" element={<Page4Two />} />
         </Routes>

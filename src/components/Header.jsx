@@ -34,9 +34,13 @@ const Header = () => {
     const handleScrollToSection = (id) => {
         const section = document.getElementById(id);
         if (section) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
+            window.scrollTo({
+                top: section.offsetTop - 100, // 🚀 헤더 높이만큼 여백 추가
+                behavior: "smooth",
+            });
         }
     };
+    
 
     return (
         <header id="header" role="banner">

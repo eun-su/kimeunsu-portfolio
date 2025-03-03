@@ -41,7 +41,7 @@ a {text-decoration: none; color: #222; display: inline-block;}
 .description-box { width: 100%; max-width: 78vw; background-color: #d3d3d3; color: #808080; border-radius: 10px; padding: 15px; font-size: 16px; margin: 10px 10px 10px 0; }
 
 @media (max-width: 768px) {
-  #navmenu { top: 0; left: 0; right: 0; width: 100vw; background-color: #fff; text-align: center; padding: 0; z-index: 1000; position: fixed; margin-top: 67px; }
+  #navmenu { top: 0; left: 0; right: 0; width: 100vw; background-color: #fff; text-align: center; padding: 0; z-index: 1000; position: fixed; margin-top: 81px; }
   .homeview { width: 100%; }
   .page-main { position: relative; left: 0; top: 30vh; }
   .accordion { flex-direction: row; justify-content: space-between; width: 100vw; background: white; height: auto; }
@@ -57,6 +57,7 @@ a {text-decoration: none; color: #222; display: inline-block;}
   .accordion-body.show.fourth { display: block !important; transform: translateX(-66%); }
   .button-container { display: flex; flex-direction: row; justify-content: center; padding: 10px; }
 
+  .title-box { margin:10px 10px 10px 10px; }
   .title-divider { max-width: 95vw; height: 2px; margin: 2vw 2vw; }
   .description-box { max-width: 95vw; padding: 15px; font-size: 16px; margin: 2vw 2vw; }
 

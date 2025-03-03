@@ -143,11 +143,33 @@
   }
   
   .grid-nav {
+    display: flex; 
     grid-area: nav;
     background-color: #444;
     color: white;
     text-align: center;
     padding: 15px;
+  }
+
+  .dropdown {
+    margin: 0 10px;
+  }
+
+  .dropdownPage1-item {
+    min-width: 100px;
+  }
+
+  .dropdownPage1-item button {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 1rem;
+    position: relative;
+    top:10px;
+    border-bottom:1px solid #444 ;
+    outline: none;
+    background-color: #ddd;
+    cursor: pointer;
   }
   
   .grid-sidebarLeft {

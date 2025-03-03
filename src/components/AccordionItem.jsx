@@ -1,45 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-// import '../assets/css/AccordionItem.css'; // 애니메이션을 위한 CSS 파일 추가
+import React from "react";
+import PropTypes from "prop-types";
+import accordionItems from "../constants/accordionData";
 
 function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, isMobile, index }) {
-  // 페이지별 버튼 이름 지정
-  const buttonNames = {
-    '/page1': 'Tab Menu And Grid',
-    '/page1One': 'display : flex',
-    '/page1Two': 'Modal',
-    '/page2': 'Gallery',
-    '/page2One': 'Calendar',
-    '/page2Two': 'Page 2-2',
-    '/page3': 'Page 3',
-    '/page3One': 'Page 3-1',
-    '/page3Two': 'Page 3-2',
-    '/page4': 'Resampling', // 추가된 항목
-    '/page4One': 'Component Test',
-    '/page4Two': 'ETC',
-  };
+  // ✅ 현재 링크에 맞는 버튼 이름 가져오기
+  const buttonNames = links.map((linkObj) => {
+    const matchedItem = accordionItems
+      .flatMap((item) => item.links)
+      .find((item) => item.path === linkObj.path);
+    return matchedItem ? matchedItem.name : "Unknown";
+  });
 
-  // index 값에 따라 클래스 설정
+  // ✅ index 값에 따라 클래스 설정
   const bodyClass = isMobile
-    ? `accordion-body ${isOpen ? 'show' : ''} ${index === 0 ? 'first' : index === 1 ? 'second' : 'third'}`
-    : `accordion-body ${isOpen ? 'show' : ''}`;
+    ? `accordion-body ${isOpen ? "show" : ""} ${index === 0 ? "first" : index === 1 ? "second" : "third"}`
+    : `accordion-body ${isOpen ? "show" : ""}`;
 
   return (
-    <div className={`accordion-item ${isOpen ? 'active' : ''}`}>
+    <div className={`accordion-item ${isOpen ? "active" : ""}`}>
       <div className="accordion-header" onClick={onClick}>
         {title}
       </div>
       <div className={bodyClass}>
         {content}
         <div className="accordion-footer">
-          <div className={`button-container ${isMobile ? 'mobile' : 'desktop'}`}>
-            {links.map((link, idx) => (
-              <button
-                key={idx}
-                onClick={() => onLinkClick(link)}
-                className="btn btn-primary fade-in" // 애니메이션 클래스 추가
-              >
-                {buttonNames[link] || `${title} - ${idx + 1}`}
+          <div className={`button-container ${isMobile ? "mobile" : "desktop"}`}>
+            {links.map((linkObj, idx) => (
+              <button key={idx} onClick={() => onLinkClick(linkObj.path)} className="btn btn-primary fade-in">
+                {buttonNames[idx]}
               </button>
             ))}
           </div>
@@ -54,7 +42,12 @@ AccordionItem.propTypes = {
   content: PropTypes.node.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
-  links: PropTypes.arrayOf(PropTypes.string).isRequired,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
   onLinkClick: PropTypes.func.isRequired,
   isMobile: PropTypes.bool.isRequired,
   index: PropTypes.number.isRequired,

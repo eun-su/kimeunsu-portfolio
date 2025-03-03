@@ -2,13 +2,19 @@
     padding: 16px;
     display: flex;
     justify-content: space-between;
+    // align-items: flex-start;
+    // flex-wrap: wrap;
+    // min-height: 150vh;
+    // overflow: visible !important;
 
     @media (max-width: 800px){ 
         flex-direction: column;
     }
 
     .skill__title {
-        position: sticky;
+        // flex-basis: auto;
+        // align-self: flex-start;
+        position: sticky !important;
         top: 70px;
         left: 0;
         width: 48%;
