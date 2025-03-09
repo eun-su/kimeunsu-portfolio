@@ -1,0 +1,44 @@
+.more-content { max-width: 78vw; margin: 0 auto; }
+.content-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); grid-auto-rows: min-content; gap: 20px; justify-content: start; }
+.content-item { background: #fff; padding: 15px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); border-radius: 10px; text-align: center; transition: opacity 0.5s ease-out, transform 0.5s ease-out; display: flex; flex-direction: column; justify-content: space-between; }
+.content-item img { width: 100%; border-radius: 10px; object-fit: cover; }
+.content-images { display: flex; gap: 5px; max-height: 300px; overflow: hidden; }
+.content-images.single img { width: 100%; object-fit: cover; object-position: center; }
+.content-images.double { flex-direction: column; }
+.content-images.double img { width: 100%; height: auto; object-fit: cover; }
+.content-title { font-size: 1.5rem; font-weight: bold; margin: 15px 0 10px; }
+.content-subtitle { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
+.content-button { display: block; width: 100%; padding: 12px 20px; margin: 20px 0 0; background: #007bff; color: white; font-size: 16px; font-weight: bold; border: 2px solid #007bff; border-radius: 50px; cursor: pointer; transition: background 0.3s ease, border 0.3s ease; }
+.content-button:hover { background: #0056b3; border-color: #0056b3; }
+.content-button:active { background: #003f7f; border-color: #003f7f; }
+.btn-wrap { width: 100%; text-align: center; margin: 30px; }
+.load-more-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 40px; background: #007bff; color: white; font-size: 16px; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; transition: background 0.3s ease; }
+.load-more-button:hover { background: #0056b3; }
+.load-more-button img { width: 24px; height: 24px; vertical-align: middle; transition: transform 0.3s ease-in-out; }
+.load-more-button:hover img { transform: rotate(90deg); }
+.more-modal-overlay { overflow: hidden; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+body.modal-open { overflow: hidden; height: 100vh; }
+.more-modal-content { overflow-y: auto; display: flex; flex-direction: column; width: 100%; max-width: 90vw; max-height: 75vh; background: #ffffff; border-radius: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); position: relative; padding: 20px; }
+.more-modal-content::-webkit-scrollbar { width: 6px; }
+.more-modal-content::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.2); border-radius: 3px; }
+.more-modal-content::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.1); }
+.more-modal-body { display: flex; flex-direction: row; align-items: center; justify-content: center; max-width: 85vw; max-height: 75vh; background: white; padding: 20px; border-radius: 10px; overflow: hidden; }
+.more-modal-image-container { flex: 1; max-height: 75vh; display: flex; align-items: center; justify-content: center; overflow-y: auto; }
+.more-modal-image-container img { width: 100%; max-height: 75vh; object-fit: contain; }
+.more-card-body { flex: 1; padding: 20px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; }
+.more-modal-close-btn { position: absolute; top: 15px; right: 15px; background: rgba(255, 68, 68, 0.9); color: white; padding: 8px 12px; font-size: 18px; font-weight: bold; border: none; cursor: pointer; border-radius: 50%; transition: background 0.3s ease, transform 0.1s ease; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; line-height: 1; }
+.more-modal-close-btn:hover { background: rgba(204, 0, 0, 0.9); }
+.more-modal-close-btn:active { transform: scale(0.95); }
+@media (max-width: 1024px) {
+    .more-modal-body { flex-direction: row; max-width: 90vw; }
+}
+@media (max-width: 768px) {
+    .more-content { max-width: 100%; margin: 0 auto; padding: 20px; }
+    .load-more-button { width: 100%; }
+    .more-modal-content { flex-direction: column; max-width: 95vw; max-height: 95vh; }
+    .more-modal-body { flex-direction: column; overflow: scroll; }
+    .more-card-body { order: -1; } .modal-images { width: 80%; }
+    .more-modal-image-container { max-height: 50vh; width: 100%; }
+    .more-modal-image-container img { width: 100vw; max-height: 50vh; }
+    .more-modal-close-btn { top: 5px; right: 5px; padding: 8px 12px; }
+}

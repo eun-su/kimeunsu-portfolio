@@ -40,7 +40,7 @@ function Accordion({ onLinkClick }) {
           content={item.content}
           isOpen={openIndex === index}
           onClick={() => handleClick(index)}
-          links={item.links} // ✅ path, name을 포함한 배열 전달
+          links={item.links}
           onLinkClick={onLinkClick}
           isMobile={isMobile}
           index={index}

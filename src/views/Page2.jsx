@@ -1,8 +1,10 @@
 // src/pages/Page3.js
 import React from 'react';
-import MoreContentWithModal from '../components/MoreContentWithModal';
 import { headerNav } from '../constants/indexPage';
 import Breadcrumb from "../components/Breadcrumb";
+import VariableWidthSlider from '../components/VariableWidthSlider';
+import AutoplaySlide from '../components/AutoplaySlider';
+import MoreContentWithModal from '../components/MoreContentWithModal';
 import Footer from '../components/Footer';
 
 function Page2() {
@@ -20,9 +22,33 @@ function Page2() {
           ]}
         />
         
-        <div>
-          <h1>Gallery</h1>
-          <h3>JavaScript Library jQuery</h3>
+        <div className="title-box">
+          <h2 className="title-text">Slick Slider</h2>
+          <div className="title-bar"></div>
+          <div className="subtitle-text">CSS jQuery</div>
+        </div>
+        <div className="title-divider"></div>
+        <div className="description-box">
+          jQuery 라이브러리 Slick Slider 를 활용한 슬라이드 예제 작성
+        </div>
+
+        <div className='title-text-h3'>
+          <h3>Variable Width Slide</h3>
+        </div>
+        <VariableWidthSlider />
+        <div className='title-text-h3'>
+          <h3>Autoplay Slide</h3>
+        </div>
+        <AutoplaySlide />
+
+        <div className="title-box">
+          <h2 className="title-text">Modal Card Gallery</h2>
+          <div className="title-bar"></div>
+          <div className="subtitle-text">CSS Grid jQuery</div>
+        </div>
+        <div className="title-divider"></div>
+        <div className="description-box">
+          카드 갤러리 모달
         </div>
         <MoreContentWithModal data={headerNav} itemsPerPage={6} />
         <Footer />

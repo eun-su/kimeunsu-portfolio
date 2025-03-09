@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import accordionItems from "../constants/accordionData";
 
 function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, isMobile, index }) {
-  // ✅ 현재 링크에 맞는 버튼 이름 가져오기
   const buttonNames = links.map((linkObj) => {
     const matchedItem = accordionItems
       .flatMap((item) => item.links)
@@ -11,7 +10,6 @@ function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, is
     return matchedItem ? matchedItem.name : "Unknown";
   });
 
-  // ✅ index 값에 따라 클래스 설정
   const bodyClass = isMobile
     ? `accordion-body ${isOpen ? "show" : ""} ${index === 0 ? "first" : index === 1 ? "second" : "third"}`
     : `accordion-body ${isOpen ? "show" : ""}`;
@@ -24,7 +22,7 @@ function AccordionItem({ title, content, isOpen, onClick, links, onLinkClick, is
       <div className={bodyClass}>
         {content}
         <div className="accordion-footer">
-          <div className={`button-container ${isMobile ? "mobile" : "desktop"}`}>
+          <div className="button-container">
             {links.map((linkObj, idx) => (
               <button key={idx} onClick={() => onLinkClick(linkObj.path)} className="btn btn-primary fade-in">
                 {buttonNames[idx]}

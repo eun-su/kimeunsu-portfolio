@@ -34,6 +34,7 @@ a {text-decoration: none; color: #222; display: inline-block;}
 /* 제목 소제목 설명 스타일 */
 .title-box { display: flex; align-items: center; justify-content: flex-start; font-family: 'Gemunu Libre', sans-serif; margin:100px 10px 10px 10px; }
 .title-text { font-size: 32px; font-weight: 700; color: #333; margin-right: 10px; }
+.title-text-h3 { padding: 20px 5px 10px 5px }
 .titleLink-none { font-size: 0px; opacity: 0; }
 .subtitle-text { font-size: 20px; font-weight: 200; color: #666; }
 .title-bar { content: ''; display: block; width: 1rem; height: 1px; background-color: #ccc; margin: 0 10px 0 5px; }
@@ -58,6 +59,7 @@ a {text-decoration: none; color: #222; display: inline-block;}
   .button-container { display: flex; flex-direction: row; justify-content: center; padding: 10px; }
 
   .title-box { margin:10px 10px 10px 10px; }
+  .title-text-h3 { padding: 20px 5px 10px 15px }
   .title-divider { max-width: 95vw; height: 2px; margin: 2vw 2vw; }
   .description-box { max-width: 95vw; padding: 15px; font-size: 16px; margin: 2vw 2vw; }
 

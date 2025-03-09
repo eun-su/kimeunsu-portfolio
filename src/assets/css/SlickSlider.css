@@ -1,0 +1,47 @@
+/* slick slider */
+.page2-container {
+  padding: 40px;
+  text-align: center;
+  background-color: #f6f6f6;
+}
+
+.slider-container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.slider-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.slick-slider {
+  display: flex;
+  align-items: center;
+}
+
+.slick-list {
+  overflow: hidden; /* ✅ 슬라이더 밖으로 넘치는 요소 숨김 */
+}
+
+.slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.slider-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 200px;
+  padding: 10px;
+}
+
+.slider-item img {
+  max-height: 100%;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

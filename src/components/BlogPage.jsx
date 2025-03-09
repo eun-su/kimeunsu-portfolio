@@ -100,21 +100,29 @@ const BlogPage = () => {
       </footer>
 
       {/* 모달창 */}
-      {showModal && (
-        <div className="blog-modal-overlay" onClick={() => setShowModal(false)}>
-          <div className="blog-modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="blog-card mb-4">
-              <a href="/"><img className="blog-card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="blog" /></a>
-              <div className="blog-card-body">
+      {/* 모달창 */}
+    {showModal && (
+    <div className="blog-modal-overlay" onClick={() => setShowModal(false)}>
+        <div className="blog-modal-content" onClick={(e) => e.stopPropagation()}>
+            {/* ✅ 이미지 컨테이너 */}
+            <div className="blog-modal-image-container">
+                <img className="blog-card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="blog" />
+            </div>
+
+            {/* ✅ 텍스트 컨테이너 */}
+            <div className="blog-card-body">
                 <div className="small text-muted">January 1, 2022</div>
                 <h2 className="blog-card-title">Featured Post Title</h2>
-                <p className="blog-card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
+                <p className="blog-card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae deserunt architecto rem.
+                </p>
             </div>
+
+            {/* ✅ 닫기 버튼 */}
             <button className="blog-modal-close-btn" onClick={() => setShowModal(false)}>닫기</button>
-          </div>
         </div>
-      )}
+    </div>
+    )}
     </div>
   );
 };

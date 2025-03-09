@@ -1,0 +1,89 @@
+.slider-container {
+  position: relative;
+  width: 78vw;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.custom-slider {
+  display: flex;
+  gap: 10px; /* 이미지 간격 균등하게 조절 */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* 스크롤바 숨김 */
+  -ms-overflow-style: none;
+}
+
+.custom-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-item {
+  flex-shrink: 0;
+  height: 250px; /* 모든 이미지 높이를 일정하게 설정 */
+  display: flex;
+  align-items: center;
+}
+
+.slider-item img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.slider-item.wide {
+  width: 300px; /* 가로가 긴 이미지 */
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+  width: 40px; /* 버튼 크기 고정 */
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* 둥근 버튼 스타일 */
+}
+
+.slider-button.left {
+  left: 15px;
+}
+
+.slider-button.right {
+  right: 15px;
+}
+
+/* ✅ 모바일 터치 스크롤 가능하도록 설정 */
+.custom-slider {
+  touch-action: pan-x;
+}
+  
+/* 📱 모바일 반응형 (768px 이하) */
+@media (max-width: 768px) {
+  .slider-container {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+  }
+  .custom-slider {
+    width: 94vw; /* ✅ 슬라이더 전체 너비 */
+  }
+  .slider-button.prev {
+    left: 0px;
+  }
+  .slider-button.next {
+    right: 0px;
+  }
+}

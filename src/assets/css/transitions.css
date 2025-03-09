@@ -1,5 +1,5 @@
 /* ✅ 페이지 로딩 박스 */
-.page-loader {
+/* .page-loader {
   position: fixed;
   top: 81px;
   left: 20vw;
@@ -8,8 +8,8 @@
   background-color: #f6f0eb;
   border: 1px solid #ddd;
   z-index: 9999;
-  transform: translateX(100%); /* 처음에는 화면 밖에 위치 */
-}
+  transform: translateX(100%);
+} */
 
 /* ✅ 페이지 전환 애니메이션 */
 .fade-in {
