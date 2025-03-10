@@ -1,0 +1,9 @@
+.fullscreen-calendar { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 78vw; height: 100vh; background: #f4f4f4; }
+.calendar-header { display: flex; align-items: center; justify-content: space-between; width: 90%; max-width: 600px; padding: 10px; background: #fff; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+.calendar-header h2 { font-size: 20px; }
+.calendar-header button { background: none; border: none; font-size: 20px; cursor: pointer; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; width: 90%; max-width: 600px; background: #fff; padding: 10px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+.calendar-day-header { text-align: center; font-weight: bold; padding: 10px; background: #ddd; border-radius: 5px; }
+.calendar-day { text-align: center; padding: 10px; border-radius: 5px; cursor: pointer; background: #fff; transition: background 0.3s; }
+.calendar-day.today { background: #ffcc00; font-weight: bold; }
+.calendar-day.empty { background: transparent; cursor: default; }

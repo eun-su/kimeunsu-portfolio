@@ -1,23 +1,29 @@
 .flex-section-1 { width: 78vw; background: #cdc0b1; padding: 50px 0; }
-.flex-section-2 { width: 78vw; background: #bfb1a2; padding: 50px 0; min-height: 70vh;}
+.flex-section-2 { width: 78vw; background: #bfb1a2; padding: 50px 0; min-height: 80vh; }
 .flex-section-3 { width: 78vw; background: #b2a495; padding: 50px 0; }
-.flex-section-4 { width: 78vw; background: #a69789; padding: 50px 0; }
+.flex-section-4 { width: 78vw; background: #a69789; padding: 50px 0; min-height: 60vh; }
 .flex-section-5 { width: 78vw; background: #998b7d; padding: 50px 0; }
-.flex-section-6 { width: 78vw; background: #8c7f71; padding: 50px 0; }
-.flex-section-7 { width: 78vw; background: #807365; padding: 50px 0; }
-.flex-section-8 { width: 78vw; background: #746759; padding: 50px 0; }
-.flex-section-9 { width: 78vw; background: #675a4d; padding: 50px 0; }
-.flex-section-10 { width: 78vw; background: #5b4e41; padding: 50px 0; }
-.flex-section-11 { width: 78vw; background: #4f4235; padding: 50px 0; }
-.flex-section-12 { width: 78vw; background: #423629; padding: 50px 0; }
+.flex-section-6 { width: 78vw; background: #a69789; padding: 50px 0; }
+.flex-section-7 { width: 78vw; background: #b2a495; padding: 50px 0; }
+.flex-section-8 { width: 78vw; background: #bfb1a2; padding: 50px 0; }
+.flex-section-9 { width: 78vw; background: #cdc0b1; padding: 50px 0; }
+.flex-section-10 { width: 78vw; background: #bfb1a2; padding: 50px 0; }
+.flex-section-11 { width: 78vw; background: #b2a495; padding: 50px 0; }
+.flex-section-12 { width: 78vw; background: #a69789; padding: 50px 0; }
 
 .flex-container-section { max-width: 1200px; margin: 0 auto; padding: 30px; border-radius: 10px; }
 .flex-explanation-box { text-align: center; margin-bottom: 30px; }
 .flex-title-box { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
 .flex-description-box { font-size: 16px; color: #444; line-height: 1.5; }
-
-.flex-container-box { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width:360px ; margin: 0 auto; background: rgba(255, 255, 255, 0.1); padding: 10px; }
+.flex-container-box { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width:360px ; margin: 0 auto; background: rgba(255, 255, 255, 0.1); padding: 15px 10px; border-radius: 10px; border: 1px solid #998b7d;}
+.flex-item-title { display: flex; width: 100%; padding:0 10px 10px 10px; justify-content: center; }
 .flex-item-box { width: calc(33.333% - 10px); height: 100px; background: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 5px; }
+.flex-item-box-20 { width: calc(20% - 10px); height: 100px; background: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 5px; }
+
+/* ✅ 반응형 조정 */
+.flex-container-nowrap {
+    overflow: hidden;
+}
 
 /* ✅ 반응형 조정 */
 @media (max-width: 1024px) {

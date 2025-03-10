@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Calendar from '../components/Calendar';
+import FullScreenCalendar from '../components/FullScreenCalendar';
 import "../assets/css/Page2One.css";
 
 const Page2Two = () => {
@@ -16,6 +17,7 @@ const Page2Two = () => {
 
   return (
     <main className="page-main">
+    <FullScreenCalendar />
     <Contact />
     <div className="inquiry-container">
       <h2>날짜 예약 문의</h2>

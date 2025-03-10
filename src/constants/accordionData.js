@@ -20,11 +20,11 @@ const accordionItems = [
     },
     {
       title: "Telerik",
-      content: <strong>This is the third item's accordion body.</strong>,
+      content: <strong>UI Library Demo</strong>,
       links: [
-        { path: "/page3", name: "Page 3" },
-        { path: "/page3One", name: "Page 3-1" },
-        { path: "/page3Two", name: "Page 3-2" },
+        { path: "/page3", name: "Page Telerik" },
+        { path: "/page3One", name: "Page Telerik" },
+        { path: "/page3Two", name: "Page Telerik" },
       ],
     },
     {

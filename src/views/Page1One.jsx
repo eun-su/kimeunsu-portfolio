@@ -10,7 +10,7 @@ function Page1One() {
     <div>
       {/* <Header /> */}
       <main className='page-main'>
-      <h2 id="slideLink" className="titleLink-none section-title">intro</h2>
+        <h2 id="flexTop" className="titleLink-none section-title">top</h2>
         
         <Breadcrumb
           items={[
@@ -20,17 +20,18 @@ function Page1One() {
           ]}
         />
       
-      <div className="title-box">
+        <div className="title-box">
           <h2 className="title-text">display flex</h2>
           <div className="title-bar"></div>
           <div className="subtitle-text">CSS GSAP</div>
         </div>
         <div className="title-divider"></div>
         <div className="description-box">
-          jQuery 라이브러리 Slick Slider 를 활용한 슬라이드 예제 작성
-      </div>
+          display flex 속성과 속성값에 따라 배치와 정렬이 변하는 과정을 GSAP 활용하여 표현한 페이지
+        </div>
         <FlexPage />
         <FlexBox />
+        <h2 id="flexEnd" className="titleLink-none section-title">end</h2>
         <Footer />
       </main>
     </div>
