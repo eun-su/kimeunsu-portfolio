@@ -1,0 +1,68 @@
+html, body { 
+  overflow-x: hidden; 
+  margin: 0; 
+  padding: 0; 
+  width: 100%; 
+  /* min-height: 100vh; ✅ min-height로 변경하여 페이지 길이 제한 해제 */
+}
+
+  /* ✅ 스크롤 바 기본적으로 숨김 */
+::-webkit-scrollbar { width: 18px; opacity: 0; transition: opacity 0.5s ease-in-out; }
+::-webkit-scrollbar-track { background: transparent; } /* ✅ 배경 숨김 */
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 1); border-radius: 4px; } /* ✅ 스크롤 바 */
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.8); }
+
+/* ✅ 스크롤 바 공중에 떠 있도록 설정 */
+.scrollbar-visible::-webkit-scrollbar { 
+  opacity: 1; 
+  position: fixed; 
+  right: 10px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+}
+  
+  /* ✅ 로딩 화면 (페이드 아웃 적용) */
+  .loading-container { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    flex-direction: column;
+    z-index: 9999;
+    opacity: 1; /* ✅ 기본값 */
+  }
+  
+  .loading-text { 
+    font-size: 2vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    gap: 5px;
+  }
+  
+  .progress-text { 
+    font-size: 3vw;
+    font-weight: bold;
+    margin-top: 10px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .char { opacity: 0; transition: opacity 0.5s ease-in-out; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  
+  .main-content { 
+    position: relative; 
+    opacity: 0; /* ✅ 처음에 투명 */
+    display: block; /* ✅ 처음부터 display: block 유지 */
+    /* visibility: hidden; ✅ 로딩 후 보이도록 설정 */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+    /* overflow: auto; */
+}

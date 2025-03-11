@@ -19,6 +19,7 @@ import Page4 from "./views/Page4";
 import Page4One from "./views/Page4One"; 
 import Page4Two from "./views/Page4Two"; 
 
+import LoadingPage from "./components/LoadingPage";
 import ScrollToTop from "./utils/ScrollToTop";
 import smooth from "./utils/smooth";
 import link from "./utils/link";
@@ -95,10 +96,12 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <PageTransitionWrapper />
-    </Router>
+    <LoadingPage>
+      <Router>
+        <ScrollToTop />
+        <PageTransitionWrapper />
+      </Router>
+    </LoadingPage>
   );
 };
 
