@@ -27,15 +27,15 @@ const accordionItems = [
         { path: "/page3Two", name: "Page Telerik" },
       ],
     },
-    {
-      title: "Test",
-      content: <strong>Test Place</strong>,
-      links: [
-        { path: "/page4", name: "Resampling" },
-        { path: "/page4One", name: "Component Test" },
-        { path: "/page4Two", name: "ETC" },
-      ],
-    },
+    // {
+    //   title: "Test",
+    //   content: <strong>Test Place</strong>,
+    //   links: [
+    //     { path: "/page4", name: "Resampling" },
+    //     { path: "/page4One", name: "Component Test" },
+    //     { path: "/page4Two", name: "ETC" },
+    //   ],
+    // },
   ];
   
   export default accordionItems;  

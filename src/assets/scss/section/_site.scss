@@ -72,6 +72,14 @@
                     top: 200px;
                 }
             }
+            &.s5 {
+                background-color: var(--subBg100);
+                top: 240px;
+
+                @media (max-width: 800px){ 
+                    top: 200px;
+                }
+            }
             .num {
                 font-size: 5vw;
                 line-height: 1;
@@ -125,7 +133,7 @@
             .info {
                 position: absolute;
                 left: 0;
-                bottom: 3%;
+                top: 50%;
                 width: 98%;
                 margin-left: 1%;
                 border-top: 1px solid var(--black);

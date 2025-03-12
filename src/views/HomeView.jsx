@@ -1,7 +1,8 @@
 import React from "react";
 // import Header from "../components/Header";
-// import Skip from "../components/Skip";
+import BackgroundTrigger from "../components/BackgroundTrigger";
 import Intro from "../components/Intro";
+import Profile from "../components/Profile";
 import Skill from "../components/Skill";
 import Site from "../components/Site";
 // import Port from "../components/Port";
@@ -15,8 +16,14 @@ const HomeView = () => {
       {/* <Skip /> */}
       {/* <Header /> */}
       <Main>
-        <Intro />
-        <Skill />
+        <BackgroundTrigger bgColor="#000000" textColor="#ffffff">
+          <Intro />
+        
+          <Profile />
+        </BackgroundTrigger>
+        <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
+          <Skill />
+        </BackgroundTrigger>
         <Site />
         {/* <Port /> */}
         <Contact />

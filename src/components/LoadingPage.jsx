@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import "../assets/css/LoadingPage.css";
 
 const imageUrls = [
+  "/img/Tokyo.jpg",
   "/img/banner/01_misscoco_open_black.jpg",
   "/img/banner/02_blackfriday.png",
   "/img/banner/03_promotion_kolon.jpg",
@@ -29,6 +30,17 @@ const imageUrls = [
   "/img/blog/13.png",
   "/img/blog/14.jpg",
   "/img/blog/15.png",
+  "/img/port01.jpg",
+  "/img/port02.jpg",
+  "/img/port03.jpg",
+  "/img/port04.jpg",
+  "/img/port05.jpg",
+  "/img/port06.jpg",
+  "/img/port07.jpg",
+  "/img/port08.jpg",
+  "/img/port09.jpg",
+  "/img/port10.jpg",
+  "/img/Tokyo.jpg",
 ];
 
 export default function LoadingPage({ children }) {
