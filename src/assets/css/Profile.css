@@ -1,8 +1,12 @@
 #profile { width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #000000; color: white; text-align: center; position: relative; }
 
 .profile_name, .profile_iam, .profile_introduce, .profile_imgText, .profile_scroll { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
-
 .profile_name ul, .profile_iam ul, .profile_introduce ul, .profile_imgText ul { list-style: none; padding: 0; }
+
+.profile_name { margin: 0 0 5vw 0; }
+.profile_name ul li span {
+    font-size: 5vw;
+}
 
 .profile_introduce ul {
     padding: 100px 0;
