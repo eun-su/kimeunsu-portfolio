@@ -1,4 +1,4 @@
-.fullscreen-calendar { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 78vw; height: 100vh; background: #f4f4f4; }
+.fullscreen-calendar { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 78vw; height: 60vh; }
 .calendar-header { display: flex; align-items: center; justify-content: space-between; width: 90%; max-width: 600px; padding: 10px; background: #fff; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
 .calendar-header h2 { font-size: 20px; }
 .calendar-header button { background: none; border: none; font-size: 20px; cursor: pointer; }

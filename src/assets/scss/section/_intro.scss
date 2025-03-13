@@ -11,6 +11,37 @@
 }
 
 .char { display: inline-block; opacity: 0; } /* 한 글자씩 따로 컨트롤 */
+.intro__subtitle, .intro__third-title {
+    position: absolute;
+    font-size: 4vw ;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 800;
+    white-space: nowrap;
+    text-indent: -0.1vw;
+    letter-spacing: -0.1vw;
+}
+.intro__subtitle {
+    position: relative;
+    left: 20vw;
+    padding: 10px 0 0 20px;
+}
+.intro__third-title {
+    position: relative;
+    left: 10vw;
+    padding: 10px 0 0 20px;
+}
+
+.highlight {
+    font-size: 2em; /* ✅ "Web" 부분만 글자 크기 증가 */
+    line-height: 1;
+    font-weight: 800;
+    white-space: nowrap;
+    text-indent: -0.5vw;
+    letter-spacing: -0.1vw;
+    color: #f29886; /* 원하는 색상 지정 가능 */
+    padding: 6vw 20px 0 20px;
+}
 
 .intro__inner {
     width: 100%;
@@ -26,14 +57,14 @@
     }
 
     .intro__title {
-        font-size: 7vw;
+        font-size: 6vw;
         text-transform: uppercase;
         line-height: 1;
         font-weight: 800;
         white-space: nowrap;
-        text-indent: -0.5vw;
-        letter-spacing: -0.3vw;
-        padding: 0 0 0 20px;
+        text-indent: -0.1vw;
+        letter-spacing: -0.1vw;
+        padding: 10vw 0 0 20px;
 
         @media (max-width: 320px){ 
             display: none;

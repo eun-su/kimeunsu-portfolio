@@ -41,8 +41,8 @@ const Profile = () => {
   </div>
   <div className="profile_iam" ref={iamRef}>
     <ul>
-      <li className="profile_split">I AM</li>
-      <li className="profile_split">FRONTEND</li>
+      <li className="profile_split">UI DESIGNER</li>
+      <li className="profile_split">PROGRAMMER</li>
       <li className="profile_split">DEVELOPER</li>
     </ul>
   </div>

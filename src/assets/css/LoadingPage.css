@@ -37,7 +37,7 @@ html, body {
   }
   
   .loading-text { 
-    font-size: 2vw;
+    font-size: 5vw;
     font-weight: bold;
     text-transform: uppercase;
     display: flex;
@@ -45,7 +45,7 @@ html, body {
   }
   
   .progress-text { 
-    font-size: 3vw;
+    font-size: 10vw;
     font-weight: bold;
     margin-top: 10px;
     animation: fadeIn 1s ease-in-out;

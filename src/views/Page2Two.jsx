@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Calendar from '../components/Calendar';
+import Breadcrumb from "../components/Breadcrumb";
 import FullScreenCalendar from '../components/FullScreenCalendar';
 import "../assets/css/Page2One.css";
 
@@ -17,8 +18,26 @@ const Page2Two = () => {
 
   return (
     <main className="page-main">
+      <h2 id="slideLink" className="titleLink-none section-title">Calendar</h2>
+        
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Page1", href: "/page1" },
+            { label: "Current Page" }
+          ]}
+        />
+      
+        <div className="title-box">
+          <h2 className="title-text">jQuery Calendar</h2>
+          <div className="title-bar"></div>
+          <div className="subtitle-text">CSS jQuery</div>
+        </div>
+        <div className="title-divider"></div>
+        <div className="description-box">
+          jQuery 이용한 일반 달력 & 예약 날짜 선택 (작업중)
+        </div>
     <FullScreenCalendar />
-    <Contact />
     <div className="inquiry-container">
       <h2>날짜 예약 문의</h2>
       

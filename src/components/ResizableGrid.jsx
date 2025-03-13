@@ -1,29 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const ResizableGrid = () => {
   const [gridSize, setGridSize] = useState({ width: 768, height: 600 });
   const [showDropdowns, setShowDropdowns] = useState([false, false]); // ✅ 두 개의 드롭다운 개별 상태
-
-  useEffect(() => {
-    // Bootstrap CSS & JS 로드 (CDN)
-    const bootstrapCSS = document.createElement("link");
-    bootstrapCSS.rel = "stylesheet";
-    bootstrapCSS.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css";
-    bootstrapCSS.integrity = "sha384-hG3pGJjF4BdloD1lK/ffAOcCkha8Q3+z8ABG4xHuyFjMQS3wBMmp/T5i3RggC1CW";
-    bootstrapCSS.crossOrigin = "anonymous";
-    document.head.appendChild(bootstrapCSS);
-
-    const bootstrapJS = document.createElement("script");
-    bootstrapJS.src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js";
-    bootstrapJS.integrity = "sha384-QWt9HSeM4hyI9P5YBDVRyk4hiutHZJ1lB23BpvAAMWAhdo7WkaNiF3j7j82OTz+1";
-    bootstrapJS.crossOrigin = "anonymous";
-    document.body.appendChild(bootstrapJS);
-
-    return () => {
-      document.head.removeChild(bootstrapCSS);
-      document.body.removeChild(bootstrapJS);
-    };
-  }, []);
 
   const handleMouseDown = (event) => {
     event.preventDefault();

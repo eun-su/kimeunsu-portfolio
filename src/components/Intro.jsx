@@ -9,51 +9,78 @@ gsap.registerPlugin(ScrollTrigger);
 const Intro = () => {
     const imgRef = useRef(null);
     const titleRef = useRef(null);
+    const subtitleRef = useRef(null);
+    const thirdTitleRef = useRef(null);
 
     useEffect(() => {
-        // ✅ 이미지 회전 애니메이션 (스크롤에 따라 점진적 변화)
+        // ✅ 이미지 회전 애니메이션
         gsap.to(imgRef.current, {
-            rotation: 0, // 15도 회전
+            rotation: 0,
             ease: "none",
             scrollTrigger: {
                 trigger: imgRef.current,
-                start: "top bottom", // 이미지가 화면에 들어올 때 시작
-                end: "bottom top", // 스크롤이 이미지 아래까지 진행될 때까지 회전 유지
-                scrub: 1, // ✅ 스크롤과 함께 부드럽게 회전
-                anticipatePin: 1, // ✅ 고정될 때 튕기는 효과 방지
-                invalidateOnRefresh: true, // ✅ 화면 크기 변경 시 애니메이션 재등록
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
                 toggleActions: "play reverse play reverse",
             },
         });
 
-        // ✅ h2 텍스트 한 글자씩 나타나는 애니메이션 (띄어쓰기 유지)
-        let originalText = introText.title; // 원본 텍스트 유지
-        let formattedText = originalText
-            .split("")
-            .map((char) => (char === " " ? "&nbsp;" : `<span class="char">${char}</span>`))
-            .join("");
+        // ✅ h2 텍스트 애니메이션 함수
+        const animateText = (element) => {
+            gsap.fromTo(
+                element.querySelectorAll(".char"),
+                { opacity: 0.5 },
+                {
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    repeat: -1,
+                    yoyo: true,
+                }
+            );
+        };
 
-        titleRef.current.innerHTML = formattedText; // HTML로 설정 (띄어쓰기 유지)
+        // ✅ 기존 titleRef, subtitleRef, thirdTitleRef 각각 애니메이션 적용
+        animateText(titleRef.current);
+        animateText(subtitleRef.current);
+        animateText(thirdTitleRef.current);
 
-        gsap.fromTo(
-            titleRef.current.children,
-            { opacity: 0.5 }, // 시작: 투명
-            {
-                opacity: 1, // 나타남
-                duration: 0.5, // 각 글자에 걸리는 시간
-                stagger: 0.1, // 글자마다 0.1초 간격으로 나타남
-                repeat: -1, // 무한 반복
-                yoyo: true, // 나타났다가 다시 투명해짐
-            }
-        );
     }, []);
 
     return (
         <section id="intro">
             <div className="intro__inner">
+                {/* ✅ 첫 번째 h2 */}
                 <h2 ref={titleRef} className="intro__title">
-                    {introText.title}
+                    <span className="highlight">
+                        {"Web".split("").map((char, index) => (
+                            <span key={index} className="char">{char}</span>
+                        ))}
+                    </span>{" "}
+                    <span>
+                        {"publisher".split("").map((char, index) => (
+                            <span key={index} className="char">{char}</span>
+                        ))}
+                    </span>
                 </h2>
+
+                {/* ✅ 두 번째 h2 */}
+                <h2 ref={subtitleRef} className="intro__subtitle">
+                    {"DESIGNER".split("").map((char, index) => (
+                        <span key={index} className="char">{char}</span>
+                    ))}
+                </h2>
+
+                {/* ✅ 세 번째 h2 */}
+                <h2 ref={thirdTitleRef} className="intro__third-title">
+                    {"DEVELOPER".split("").map((char, index) => (
+                        <span key={index} className="char">{char}</span>
+                    ))}
+                </h2>
+
                 <div className="intro__lines" aria-hidden="true">
                     <span className="line"></span>
                     <span className="line"></span>
