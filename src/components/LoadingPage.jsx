@@ -3,9 +3,9 @@ import { gsap } from "gsap";
 import "../assets/css/LoadingPage.css";
 
 const imageUrls = [
-  "/img/Tokyo.jpg",
-  "/img/banner/01_misscoco_open_black.jpg",
-  "/img/banner/02_blackfriday.png",
+  "/assets/img/Tokyo.jpg",
+  "/assets/img/banner/01_misscoco_open_black.jpg",
+  "/assets/img/banner/02_blackfriday.png",
   "/img/banner/03_promotion_kolon.jpg",
   "/img/banner/04_202204_slide.jpg",
   "/img/banner/05_luxury.jpg",
