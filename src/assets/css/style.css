@@ -16,7 +16,7 @@ a {text-decoration: none; color: #222; display: inline-block;}
 
 /* PC 화면: 좌측 20vw 고정, 모든 메뉴는 기본적으로 닫힘 */
 #wrap { display: flex; }
-#navmenu { display: flex; flex-direction: column; width: 20vw; position: fixed; margin-top: 80px; }
+#navmenu { display: flex; flex-direction: column; width: 20vw; position: fixed; margin-top: 80px; z-index: 2000; }
 .homeview { width: 80%; transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out; }
 .page-main { position: relative; left: 21vw; top: 80px; }
 .accordion { width: 100%; height: 100vh; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; background-color: #ffffff; }
