@@ -19,7 +19,7 @@ a {text-decoration: none; color: #222; display: inline-block;}
 #navmenu { display: flex; flex-direction: column; width: 20vw; position: fixed; margin-top: 80px; }
 .homeview { width: 80%; transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out; }
 .page-main { position: relative; left: 21vw; top: 80px; }
-.accordion { width: 100%; height: 100vh; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+.accordion { width: 100%; height: 100vh; border: 1px solid #ddd; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; background-color: #ffffff; }
 .accordion-subject {
   padding: 1em 1em;
   font-size: 12px;
