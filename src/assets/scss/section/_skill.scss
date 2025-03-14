@@ -48,11 +48,13 @@
             max-width: 400px;
             height: auto;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
-            overflow: hidden;
             transition: opacity 0.5s ease, transform 0.5s ease;
             gap: 10px;
+            margin: 10px 0;
         }
         
         .skill__image img {
