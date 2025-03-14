@@ -16,7 +16,7 @@
 .load-more-button:hover { background: #0056b3; }
 .load-more-button img { width: 24px; height: 24px; vertical-align: middle; transition: transform 0.3s ease-in-out; }
 .load-more-button:hover img { transform: rotate(90deg); }
-.more-modal-overlay { justify-content: center !important; overflow: hidden; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.more-modal-overlay { justify-content: center !important; overflow: hidden; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; z-index: 4000; }
 body.modal-open { overflow: hidden; height: 100vh; }
 .more-modal-content { overflow-y: auto; display: flex; flex-direction: column; width: 100%; max-width: 90vw; max-height: 75vh; background: #ffffff; border-radius: 10px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); position: relative; padding: 20px; }
 .more-modal-content::-webkit-scrollbar { width: 6px; }
