@@ -92,9 +92,10 @@
                 top: 1vw;
 
                 @media (max-width: 800px){ 
+                    position: relative;
                     font-size: 80px;
-                    left: 20px;
-                    top: 20px;
+                    left: 0px;
+                    top: 10px;
                 }
             }
             .text {
@@ -123,7 +124,7 @@
                     text-decoration: underline;
                     text-transform: uppercase;
                     color: var(--black200);
-                    font-size: 1rem;
+                    font-size: 2rem;
                     transition: all 0.3s;
                     margin: 0 2px;
 
