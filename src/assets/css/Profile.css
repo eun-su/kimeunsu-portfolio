@@ -1,4 +1,4 @@
-#profile { width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #000000; color: white; text-align: center; position: relative; }
+#profile { width: 100%; height: 150vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #000000; color: white; text-align: center; position: relative; }
 
 .profile_name, .profile_iam, .profile_introduce, .profile_imgText, .profile_scroll { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
 .profile_name ul, .profile_iam ul, .profile_introduce ul, .profile_imgText ul { list-style: none; padding: 0; }
@@ -9,13 +9,13 @@
 }
 
 .profile_introduce ul {
-    padding: 100px 0;
+    padding: 100px 20px;
 }
 
 .profile_split { font-size: 1rem; font-weight: bold; margin: 10px 0; }
 .profile_split_left { text-align: left; font-size: 1rem; font-weight: bold; margin: 10px 0; }
 
-.profile_imgText { display: flex; align-items: center; justify-content: center; margin-top: 30px; }
+.profile_imgText { display: flex; align-items: center; justify-content: center; margin-top: 30px; padding: 10px;}
 
 .profile_img { width: 150px; height: 150px; background: url('../img/kimeunsu.jpg') no-repeat center center/cover; border-radius: 10%; margin-right: 20px; }
 

@@ -24,7 +24,6 @@ export default function LoadingPage({ children }) {
     const updateProgress = () => {
       loadedCount++;
       const newProgress = Math.floor((loadedCount / imageUrls.length) * 100);
-      gsap.to(".progress-text", { textContent: Math.floor(newProgress) + '%', duration: 0.5, snap: { textContent: 1 }, ease: "power1.out" });
       setProgress(newProgress);
     };
 
@@ -38,19 +37,25 @@ export default function LoadingPage({ children }) {
     });
 
     const textElements = textRef.current.children;
-      gsap.fromTo(
-        textElements,
-        { y: "-10px", opacity: 1 },
-        { y: "10px", duration: 1, stagger: 0.2, repeat: -1, yoyo: true, ease: "power1.inOut" }
-      );
+    gsap.fromTo(
+      textElements,
+      { y: "-10px", opacity: 1 },
+      { y: "10px", duration: 1, stagger: 0.2, repeat: -1, yoyo: true, ease: "power1.inOut" }
+    );
+
+    let currentProgress = 0;
+    const interval = setInterval(() => {
+      if (currentProgress < 100) {
+        currentProgress += 1;
+        setProgress(currentProgress);
+      } else {
+        clearInterval(interval);
+      }
+    }, 20);
 
     Promise.all(preloadImages).then(() => {
       const elapsedTime = Date.now() - startTime;
       const remainingTime = Math.max(2000 - elapsedTime, 0);
-      
-      gsap.to(".progress-text", { textContent: 100, duration: remainingTime / 1000, ease: "power1.out", onUpdate: () => {
-        setProgress(prev => (prev < 100 ? prev + 1 : 100));
-      }});
       
       setTimeout(() => {
         gsap.timeline()
@@ -80,7 +85,7 @@ export default function LoadingPage({ children }) {
     <>
       <div className="loading-container" style={{ display: isLoading ? "flex" : "none" }}>
         <div className="loading-text" ref={textRef}>
-          {"LOADING".split("").map((char, index) => (
+          {"LOADING".split("" ).map((char, index) => (
             <span key={index} className="char">{char}</span>
           ))}
         </div>

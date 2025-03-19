@@ -33,7 +33,6 @@ function Accordion({ onLinkClick }) {
 
   return (
     <div className="accordion">
-    <div className="accordion-subject">+ My Blog</div>
       {accordionItems.map((item, index) => (
         <AccordionItem
           key={index}
