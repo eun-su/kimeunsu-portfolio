@@ -19,7 +19,7 @@ const accordionItems = [
       ],
     },
     {
-      title: "Telerik",
+      title: "Design",
       content: <strong>UI Library Demo</strong>,
       links: [
         { path: "/page3", name: "Page Telerik" },

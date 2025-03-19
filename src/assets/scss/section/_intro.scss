@@ -66,6 +66,10 @@
         letter-spacing: -0.1vw;
         padding: 10vw 0 0 20px;
 
+        @media (max-width: 768px){ 
+            padding: 30vw 0 0 20px;
+        }
+
         @media (max-width: 320px){ 
             display: none;
         }
@@ -80,6 +84,10 @@
         justify-content: center;
         flex-direction: column;
         position: relative;
+
+        @media (max-width: 768px){ 
+            background-color: rgb(0, 0, 0, 0);
+        }
 
         .text {
             font-size: 3vw;
@@ -132,6 +140,11 @@
             height: 1px;
             background-color: var(--black);
             margin-bottom: 0.5vw;
+            visibility: visible;
+
+            @media (max-width: 768px){ 
+                visibility: hidden;
+            }
 
             &:nth-child(1){
                 height: 1px;
@@ -168,7 +181,7 @@
                 margin-bottom: 0;
                 display: none;
 
-                @media (max-width: 800px){ 
+                @media (max-width: 768px){ 
                     display: block;
                 }
 
