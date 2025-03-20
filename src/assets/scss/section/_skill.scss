@@ -116,11 +116,21 @@
                 gap: 10px; /* ✅ 이미지 간격 */
                 margin-top: 10px;
             
+                .skill__image-title{
+                    font-size: 1.5rem;
+                    text-align: left;
+                    font-weight: 700;
+                    padding: 10px;
+                    position: relative;
+                    top: -10px;
+                }
+
                 .skill__image-item {
                     // position: relative;
                     width: 100%; /* ✅ 가로 100% */
                     // max-width: 250px;
                     text-align: center;
+                    margin: 0 0 3vw 0;
                 }
                 
                 .skill__image-item img {

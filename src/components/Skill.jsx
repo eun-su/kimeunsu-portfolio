@@ -81,6 +81,7 @@ const Skill = () => {
                             <div className="skill__image-container">
                                 {skill.imageList.map((image, index) => (
                                     <div className="skill__image-item" key={index}>
+                                        <span className="skill__image-title">{skill.imageTitleList[index]}</span>
                                         <img src={image} alt={skill.imageDesc[index]} />
                                         <span className="skill__image-text">{skill.imageDesc[index]}</span> {/* ✅ 이미지 설명 추가 */}
                                     </div>
