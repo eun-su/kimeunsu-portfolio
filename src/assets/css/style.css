@@ -16,26 +16,25 @@ a {text-decoration: none; color: #222; display: inline-block;}
 
 /* PC 화면: 좌측 20vw 고정, 모든 메뉴는 기본적으로 닫힘 */
 #wrap { display: flex; }
-#navmenu { display: flex; flex-direction: column; width: 20vw; position: fixed; margin-top: 80px; z-index: 2000; }
-.homeview { width: 80%; transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out; }
+#navmenu { display: flex; flex-direction: column; justify-content: center; width: 17vw; max-width: 300px; position: fixed; margin-top: 0px; margin-left: 10px; z-index: 2000; }
+
+.homeview { width: calc(100% - 20%); transition: width 0.6s ease; }  
+.homeview.fullwidth { width: 100% !important; }
+.navmenu { position: fixed; top: 0; left: 0; width: auto; height: 100vh; /* background: #333; */ color: #333; z-index: 1000; transition: transform 0.3s ease; }
+.nav-toggle-button { font-size: 24px; position: absolute; top: 50%; right: -27px; transform: translateY(-50%); background-color: #000; color: #fff; border: none; padding: 30px 10px; cursor: pointer; z-index: 1100; border-radius: 0 5px 5px 0; backdrop-filter: blur(15px); background-color: rgba(116, 99, 99, 0.3); }
+
 .page-main { position: relative; left: 21vw; top: 80px; }
-.accordion { width: 100%; height: 100vh; border: 1px solid #ddd; border-radius: 0px; overflow: hidden; display: flex; flex-direction: column; }
-.accordion-subject {
-  padding: 1em 1em;
-  font-size: 12px;
-  text-transform: uppercase;
-  border-top: 1px solid #dddddd;
-  border-right: 1px solid #ddd;
-}
+.accordion { width: 100%; height: 70vh; border: 1px solid #ddd; border-radius: 0 0 0 0; overflow: hidden; display: flex; flex-direction: column; }
+.accordion-subject { padding: 1em 1em; font-size: 12px; text-transform: uppercase; border-top: 1px solid #dddddd; border-right: 1px solid #ddd; border-left: 1px solid #ddd; border-radius: 0 0 0 0; /* background-color: #ffffff; */ }
 .accordion-item { border-bottom: 1px solid #ddd; }
-.accordion-item.active { background-color: #e6f2ff; }
+.accordion-item.active { background-color: #86c5f2; }
 .button-container button.active { background-color: #ffcc00; color: black; }
-.accordion-header { padding: 1em 1em; background-color: #f7f7f7; cursor: pointer; user-select: none; }
+.accordion-header { padding: 1em 1em; /* background-color: #f7f7f7; */ cursor: pointer; user-select: none; border-bottom: 1px solid #fff; }
 .accordion-body { display: none !important; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; padding: 0 1em; background-color: #fff; }
 .accordion-body.show { display: block !important; max-height: 500px; padding: 1em; text-align: left; }
 .accordion-footer { margin-top: 10px; overflow-x: auto; white-space: nowrap; }
 .button-container { display: flex; flex-direction: column; gap: 5px; padding: 5px; overflow-x: auto; }
-.button-container button { flex: 0 0 auto; padding: 8px 12px; border: none; background: #007bff; color: white; cursor: pointer; border-radius: 4px; }
+.button-container button { flex: 0 0 auto; padding: 8px 12px; border: none; background: #007bff; color: white; cursor: pointer; border-radius: 4px; white-space: normal; word-break: break-word;}
 .button-container button:hover { background: #0056b3; }
 
 /* 제목 소제목 설명 스타일 */
@@ -49,8 +48,9 @@ a {text-decoration: none; color: #222; display: inline-block;}
 .description-box { width: 100%; max-width: 78vw; background-color: #d3d3d3; color: #808080; border-radius: 10px; padding: 15px; font-size: 16px; margin: 10px 10px 10px 0; }
 
 @media (max-width: 768px) {
-  #navmenu { top: 0; left: 0; right: 0; width: 100vw; background-color: #fff; text-align: center; padding: 0; z-index: 1000; position: fixed; margin-top: 81px; }
+  #navmenu { top: 0; left: 0; right: 0; width: 100vw; background-color: #fff; text-align: center; padding: 0; z-index: 1000; position: fixed; margin-top: 81px; margin-left: 0px;}
   .homeview { width: 100%; }
+  .navmenu { height: auto; transform: none !important; }
   .page-main { position: relative; left: 0; top: 30vh; }
   .accordion { flex-direction: row; justify-content: space-between; width: 100vw; background: #f7f7f7; height: auto; }
   .accordion-subject { display: none;}
@@ -58,7 +58,7 @@ a {text-decoration: none; color: #222; display: inline-block;}
   .accordion-item.active { background-color: #e6f2ff; }
   .accordion-item:nth-child(4) { display: none !important; }
   .accordion-header { padding: 1em 0.1em; }
-  .accordion-body { position: relative; top: 0; left: 0; transform: translateX(0%); transition: transform 0.3s ease-in-out; width: 100vw; background: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); z-index: 999; display: none; }
+  .accordion-body { position: relative; top: 0; left: 0; transform: translateX(0%); transition: transform 0.3s ease-in-out; width: 100vw; background: white; z-index: 999; display: none; }
   .accordion-body.show { display: block; }
   .accordion-body.show.first { display: block !important; transform: translateX(0%); }
   .accordion-body.show.second { display: block !important; transform: translateX(-33%); }

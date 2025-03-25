@@ -6,11 +6,12 @@ import VariableWidthSlider from '../components/VariableWidthSlider';
 import AutoplaySlide from '../components/AutoplaySlider';
 import MoreContentWithModal from '../components/MoreContentWithModal';
 import Footer from '../components/Footer';
+import BackgroundTrigger from "../components/BackgroundTrigger";
 
 function Page2() {
   return (
     <div>
-      {/* <Header /> */}
+      <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
       <main className='page-main'>
         <h2 id="slideLink" className="titleLink-none section-title">Slick Slider</h2>
         
@@ -53,6 +54,7 @@ function Page2() {
         <MoreContentWithModal data={headerNav} itemsPerPage={6} />
         <Footer />
       </main>
+      </BackgroundTrigger>
     </div>
   );
 }

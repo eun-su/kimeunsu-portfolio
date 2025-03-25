@@ -3,10 +3,12 @@ import React from 'react';
 import Breadcrumb from "../components/Breadcrumb";
 import UnderConstruction from '../components/UnderConstruction';
 import Footer from '../components/Footer';
+import BackgroundTrigger from "../components/BackgroundTrigger";
 
 function Page3() {
   return (
     <div>
+      <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
       <main className='page-main'>
         <h2 id="slideLink" className="titleLink-none section-title">Telerik</h2>
         
@@ -30,6 +32,7 @@ function Page3() {
         <UnderConstruction />
         <Footer />
       </main>
+      </BackgroundTrigger>
     </div>
   );
 }

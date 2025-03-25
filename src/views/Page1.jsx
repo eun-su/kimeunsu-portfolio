@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Breadcrumb from "../components/Breadcrumb";
 import tabData from "../constants/indexHome";
 import ResizableGrid from "../components/ResizableGrid";
+import BackgroundTrigger from "../components/BackgroundTrigger";
 import "../assets/css/Page1.css";
 
 function Page1() {
@@ -10,6 +11,7 @@ function Page1() {
 
   return (
     <div>
+     <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
       <main className="page-main">
         <h2 id="tabMenuLink" className="titleLink-none section-title">Tab Menu</h2>
         
@@ -68,6 +70,7 @@ function Page1() {
         <ResizableGrid />
         <Footer />
       </main>
+      </BackgroundTrigger>
     </div>
   );
 }

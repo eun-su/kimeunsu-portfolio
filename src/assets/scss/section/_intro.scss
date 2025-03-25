@@ -4,10 +4,16 @@
     flex-direction: column;
     align-items:center;
     justify-content: center;
-    background: url('../../img/Tokyo.jpg') no-repeat center center/cover;
+    background:
+        linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 0) 20%),
+        url('../../img/Tokyo.jpg') no-repeat center center/cover;
     color: white;
     position: relative;
     margin: 0 0 30vh 0;
+
+    @media (max-width: 768px){
+        margin: 0 0 0 0;
+    }
 }
 
 .char { display: inline-block; opacity: 0; } /* 한 글자씩 따로 컨트롤 */
@@ -52,7 +58,7 @@
     flex-direction: column;
     // padding: 16px;
 
-    @media (max-width: 800px){
+    @media (max-width: 768px){
         justify-content: center;
     }
 

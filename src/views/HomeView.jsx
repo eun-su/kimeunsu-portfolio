@@ -12,7 +12,7 @@ import Main from "../components/Main";
 
 const HomeView = () => {
   return (
-    <div className="homeview">
+    <div className="homeview" id="homeview">
       {/* <Skip /> */}
       {/* <Header /> */}
       <Main>
@@ -23,10 +23,10 @@ const HomeView = () => {
         </BackgroundTrigger>
         <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
           <Skill />
+          <Site />
+          {/* <Port /> */}
+          <Contact />
         </BackgroundTrigger>
-        <Site />
-        {/* <Port /> */}
-        <Contact />
       </Main>
       <Footer />
     </div>

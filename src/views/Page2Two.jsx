@@ -5,6 +5,7 @@ import Calendar from '../components/Calendar';
 import Breadcrumb from "../components/Breadcrumb";
 import FullScreenCalendar from '../components/FullScreenCalendar';
 import "../assets/css/Page2One.css";
+import BackgroundTrigger from "../components/BackgroundTrigger";
 
 const Page2Two = () => {
   const [selectedDate, setSelectedDate] = useState("");
@@ -17,6 +18,8 @@ const Page2Two = () => {
   };
 
   return (
+    <div>
+    <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
     <main className="page-main">
       <h2 id="slideLink" className="titleLink-none section-title">Calendar</h2>
         
@@ -111,6 +114,8 @@ const Page2Two = () => {
     <Contact />
     <Footer />
     </main>
+    </BackgroundTrigger>
+    </div>
   );
 };
 

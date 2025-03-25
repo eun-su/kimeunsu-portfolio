@@ -1,10 +1,11 @@
 .slkll__inner {
-    padding: 30vh 16px;
+    padding: 30vh 20px 30vh 50px;
     display: flex;
     justify-content: space-between;
     height: auto;
 
     @media (max-width: 768px){ 
+        padding: 30vh 20px 30vh 20px;
         flex-direction: column;
     }
 
@@ -14,7 +15,7 @@
         top: 90px;
         left: 0;
         width: 48%;
-        
+        z-index: 900;
 
         @media (max-width: 768px){ 
             width: 100%;

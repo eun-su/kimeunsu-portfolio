@@ -4,11 +4,12 @@ import Breadcrumb from "../components/Breadcrumb";
 import Footer from '../components/Footer';
 import FlexPage from '../components/FlexPage';
 import FlexBox from '../components/FlexBox';
+import BackgroundTrigger from "../components/BackgroundTrigger";
 
 function Page1One() {
   return (
     <div>
-      {/* <Header /> */}
+      <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
       <main className='page-main'>
         <h2 id="flexTop" className="titleLink-none section-title">top</h2>
         
@@ -34,6 +35,7 @@ function Page1One() {
         <h2 id="flexEnd" className="titleLink-none section-title">end</h2>
         <Footer />
       </main>
+      </BackgroundTrigger>
     </div>
   );
 }

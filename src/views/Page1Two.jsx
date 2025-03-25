@@ -4,10 +4,12 @@ import Breadcrumb from "../components/Breadcrumb";
 import MoreContentWithModal from '../components/MoreContentWithModal';
 import { headerNav } from '../constants/indexPage';
 import Footer from '../components/Footer';
+import BackgroundTrigger from "../components/BackgroundTrigger";
 
 function Page1Two() {
   return (
     <div>
+      <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
       <main className='page-main'>
         <h2 id="slideLink" className="titleLink-none section-title">Card</h2>
         
@@ -34,6 +36,7 @@ function Page1Two() {
         <MoreContentWithModal data={headerNav} itemsPerPage={6} />
         <Footer />
       </main>
+      </BackgroundTrigger>
     </div>
   );
 }

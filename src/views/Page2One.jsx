@@ -3,11 +3,12 @@ import React from 'react';
 import Port from '../components/Port';
 import Footer from '../components/Footer';
 import Breadcrumb from "../components/Breadcrumb";
+import BackgroundTrigger from "../components/BackgroundTrigger";
 
 function Page2One() {
   return (
     <div>
-      {/* <Header /> */}
+      <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
       <main className='page-main'>
         <h2 id="slideLink" className="titleLink-none section-title">GSAP</h2>
         
@@ -31,6 +32,7 @@ function Page2One() {
         <Port />
         <Footer />
       </main>
+      </BackgroundTrigger>
     </div>
   );
 }
