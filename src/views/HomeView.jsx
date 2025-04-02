@@ -3,7 +3,8 @@ import React from "react";
 import BackgroundTrigger from "../components/BackgroundTrigger";
 import Intro from "../components/Intro";
 import Profile from "../components/Profile";
-import Skill from "../components/Skill";
+// import Skill from "../components/Skill";
+import SkillView from "../components/SkillView"
 import Site from "../components/Site";
 // import Port from "../components/Port";
 import Contact from "../components/Contact";
@@ -22,7 +23,8 @@ const HomeView = () => {
           <Profile />
         </BackgroundTrigger>
         <BackgroundTrigger bgColor="#f3ede8" textColor="#000000">
-          <Skill />
+          <SkillView />
+          {/* <Skill /> */}
           <Site />
           {/* <Port /> */}
           <Contact />

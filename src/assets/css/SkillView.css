@@ -1,0 +1,34 @@
+
+.skillview__image-list { width: 100%; display: flex; flex-direction: column; gap: 100px; }
+.skillview__image-block { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; }
+.skillview__image-sticky { position: sticky; top: 100px; width: 30%; max-width: 300px; border-radius: 10px; object-fit: contain; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+@media (max-width: 768px) {
+  .skillview__image-sticky { width: 70%; top: 80px; }
+}
+
+.skillview__inner { padding: 30vh 20px 30vh 50px; display: flex; justify-content: space-between; height: auto; }
+.skillview__content { position: sticky; height: 10vw; top: 90px; left: 0; width: 48%; z-index: 900; }
+.skillview__content h2 { font-size: 4vw; font-weight: 900; line-height: 1; font-family: var(--mainKor-font); text-transform: uppercase; color: var(--black100); border-bottom: 0.4vw solid var(--black100); margin: 0 0 10px 0; }
+.skillview__content em { font-size: 1.25rem; font-weight: 400; line-height: 2; }
+
+.skillview__desc { width: 50%; }
+.skillview__text { height: auto; margin: 10vh 0 20vh 0; }
+.skillview__text span { line-height: 1; font-weight: 900; font-family: var(--mainNum-font); }
+.skillview__text h3 { font-size: 3vw; line-height: 1.3; font-weight: 900; margin: 5px 0 30px 0; }
+.skillview__text h4 { font-size: 1.5rem; text-decoration: underline; text-underline-position: under; margin-bottom: 1vw; }
+.skillview__text p { margin-bottom: 20vh; font-size: 1.1rem; }
+
+.skillview__num { font-size: 5vw; }
+.skillview__image-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.skillview__image-title { font-size: 1.5rem; text-align: left; font-weight: 700; padding: 10px; position: relative; top: -10px; }
+.skillview__image-item { width: 100%; text-align: center; margin: 0 0 3vw 0; }
+.skillview__image-item img { width: 100%; height: auto; border-radius: 14px; }
+.skillview__image-text { position: relative; color: rgba(0, 0, 0, 0.7); font-size: 12px; padding: 4px 8px; border-radius: 4px; text-align: center; width: auto; max-width: 90%; }
+
+@media (max-width: 768px) {
+  .skillview__content { width: 100%; margin-bottom: 10vw; font-size: 30px; height: auto; top: 132px; background-color: var(--mainBg-color); padding: 0 0 20px 0; }
+  .skillview__inner { padding: 30vh 20px 30vh 20px; flex-direction: column; }
+  .skillview__desc { width: 100%; }
+  .skillview__image-title { font-size: 1.5rem; }
+  .skillview__text span { font-size: 20vw; }
+}

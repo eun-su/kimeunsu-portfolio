@@ -1,0 +1,3 @@
+.floating-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; display: flex; justify-content: center; align-items: center; gap: 2rem; pointer-events: none; }
+
+.floating-letter { font-size: 6rem; font-weight: bold; color: rgba(255, 255, 255, 0.1); user-select: none; }

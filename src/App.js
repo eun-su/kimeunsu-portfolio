@@ -19,6 +19,7 @@ import Page3Two from "./views/Page3Two";
 // import Page4One from "./views/Page4One"; 
 // import Page4Two from "./views/Page4Two";
 
+// import FloatingLetters from "./components/FloatingLetters";
 import LoadingPage from "./components/LoadingPage";
 import ScrollToTop from "./utils/ScrollToTop";
 import smooth from "./utils/smooth";
@@ -60,6 +61,7 @@ function PageTransitionWrapper() {
 
   return (
     <div id="wrap">
+      {/* <FloatingLetters /> */}
       <Header />
       <NavMenu>
         <Accordion onLinkClick={handleTransition} />
