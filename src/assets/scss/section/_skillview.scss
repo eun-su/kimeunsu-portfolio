@@ -8,7 +8,7 @@
   
   .skillview__inner {
     width: 100%;
-    max-width: 1260px;
+    // max-width: 1260px;
     display: flex;
     flex-direction: row;
     gap: 5vw;
@@ -17,7 +17,7 @@
   
   .skillview__content {
     position: sticky;
-    top: 90px;
+    top: 120px;
     left: 0;
     width: 48%;
     height: 10vw;
@@ -51,8 +51,10 @@
   }
   
   .skillview__image img {
-    width: 40px;
-    height: 40px;
+    width: 6vw;
+    height: 6vw;
+    min-width: 40px;
+    min-height: 40px;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s ease-in-out;

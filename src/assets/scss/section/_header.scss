@@ -4,12 +4,27 @@
 }
 .header__inner {
     @include flex-between;
-    background-color: #888888;
+    background: linear-gradient(-90deg, #666666, #777777, #666666);
+    background-size: 400% 400%;
+    animation: gradientWaves 50s ease infinite;
+    // background-color: #888888;
     /* background-color: rgba(116, 99, 99, 0.1); */
     /* backdrop-filter: blur(15px); */
     padding: 1rem;
     width: 100vw;
     min-height: 81px;
+
+    @keyframes gradientWaves {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+    }
 
     .header__logo {
         font-size: 0.9rem;
