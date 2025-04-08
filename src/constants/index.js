@@ -59,12 +59,12 @@ export const headerNav = [
         url: "#intro"
     },
     {
-        title: "skill",
-        url: "#skill"
+        title: "profile",
+        url: "#profile"
     },
     {
-        title: "site",
-        url: "#site"
+        title: "skill",
+        url: "#skillview"
     },
     {
         title: "portfolio",

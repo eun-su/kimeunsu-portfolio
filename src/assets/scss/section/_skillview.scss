@@ -8,7 +8,7 @@
   
   .skillview__inner {
     width: 100%;
-    // max-width: 1260px;
+    top: 91px;
     display: flex;
     flex-direction: row;
     gap: 5vw;
@@ -17,7 +17,7 @@
   
   .skillview__content {
     position: sticky;
-    top: 120px;
+    top: 160px;
     left: 0;
     width: 48%;
     height: 10vw;
@@ -79,6 +79,7 @@
   .skillview__text span {
     font-weight: bold;
     color: #666;
+    font-size: 1vw;
   }
   
 
@@ -113,10 +114,11 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
+    justify-content: space-around;
   }
   
   .skillview__image-item {
-    width: 100%;
+    width: 45%;
     // max-width: 500px;
   }
   
@@ -146,7 +148,7 @@
 
 
   
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     .skillview__inner {
       flex-direction: column;
       padding: 0 5vw;
@@ -154,11 +156,11 @@
   
     .skillview__content{
       position: sticky;
-      top: 81px;
+      top: 132px;
       width: 100%;
-      z-index: 1000;
+      z-index: 900;
       background-color: #f3ede8;
-      padding: 10px;
+      padding: 20px;
     }
     .skillview__desc {
       width: 100%;

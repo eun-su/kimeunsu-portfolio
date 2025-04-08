@@ -47,7 +47,7 @@ const Header = () => {
             <div className="header__inner">
                 <div className="header__logo">
                     <h1>
-                        <a href="/">KIM EUNSU<em>PORTFOLIO</em></a>
+                        <a href="/" className="logo__color">KIM EUNSU<em>PORTFOLIO</em></a>
                     </h1>
                 </div>
                 <nav className={`header__nav ${show ? "show" : ""}`} role="navigation" aria-label="메인메뉴">
@@ -61,7 +61,7 @@ const Header = () => {
                         ) : (
                             headerNav.map((nav, key) => (
                                 <li key={key}>
-                                    <a href={nav.url}>{nav.title}</a>
+                                    <a href={nav.url} className="logo__color">{nav.title}</a>
                                 </li>
                             ))
                         )}
