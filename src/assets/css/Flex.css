@@ -94,4 +94,10 @@
     padding: 20px;
     color: white;
     text-align: center;
-  }  
+  }
+
+  @media (max-width: 768px) {
+    .flex-section {
+      width: 100vw;
+    }
+  }

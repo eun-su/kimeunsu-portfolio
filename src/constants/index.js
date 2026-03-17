@@ -154,7 +154,7 @@ export const siteText = [
     },
     {
         text: ["MISSCOCO", "Make site compliant with", "Gabia Firstmall"],
-        title: "가비아 퍼스트몰 솔루션을 이용한 사이트 커스텀 마이징",
+        title: "카페24 CAFE 24 솔루션을 이용한 사이트 커스텀 마이징",
         code: "https://www.firstmall.kr",
         view: "https://misscoco.co.kr",
         info: [
@@ -175,14 +175,14 @@ export const siteText = [
         ],
     },
     {
-        text: ["Make", "Site Compliant with", "godo Mall"],
-        title: "고도몰 솔루션을 이용한 해외사이트 제작",
-        code: "https://github.com/webstoryboy/port2023-next",
-        view: "https://lxmc.co.kr",
+        text: ["Make", "Site Compliant with", "JSP"],
+        title: "JSP 웹호스팅 간단한 블로그 제작",
+        code: "http://eunsux.cafe24.com/home",
+        view: "http://eunsux.cafe24.com/home",
         info: [
             "site coding",
             "production period : two days",
-            "use stack : HTML5/CSS3, Scss Variable, next.js",
+            "use stack : HTML5/CSS3, Maria DB, JSP",
         ],
     },
 ];

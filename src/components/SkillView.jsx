@@ -8,9 +8,13 @@ const SkillView = () => {
     useEffect(() => {
         const handleScroll = () => {
             const sections = document.querySelectorAll(".skillview__text");
+
             sections.forEach((section, index) => {
                 const rect = section.getBoundingClientRect();
-                const isInView = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
+                const isInView =
+                    rect.top < window.innerHeight / 2 &&
+                    rect.bottom > window.innerHeight / 2;
+
                 if (isInView && currentIndex !== index) {
                     setCurrentIndex(index);
                 }
@@ -36,11 +40,11 @@ const SkillView = () => {
     useEffect(() => {
         const handleFadeOut = () => {
             const skillSection = document.getElementById("skillview");
-            const rect = skillSection.getBoundingClientRect();
             const imageEl = imageRef.current;
 
-            if (!imageEl) return;
+            if (!skillSection || !imageEl) return;
 
+            const rect = skillSection.getBoundingClientRect();
             const isLast = currentIndex === skillText.length - 1;
 
             if (isLast) {
@@ -72,7 +76,11 @@ const SkillView = () => {
                         <h2>My Skill <em>나의 스킬</em></h2>
                         <div className="skillview__image" ref={imageRef}>
                             {skillText[currentIndex]?.image.map((imgSrc, idx) => (
-                                <img key={idx} src={imgSrc} alt={`Skill ${currentIndex + 1} Logo ${idx + 1}`} />
+                                <img
+                                    key={idx}
+                                    src={imgSrc}
+                                    alt={`Skill ${currentIndex + 1} Logo ${idx + 1}`}
+                                />
                             ))}
                         </div>
                     </div>
@@ -85,12 +93,17 @@ const SkillView = () => {
                             <h3>{skill.mainTitle}</h3>
                             <h4>{skill.title}</h4>
                             <p>{skill.desc}</p>
+
                             <div className="skillview__image-container">
                                 {skill.imageList.map((image, index) => (
                                     <div className="skillview__image-item" key={index}>
-                                        <span className="skillview__image-title">{skill.imageTitleList[index]}</span>
+                                        <span className="skillview__image-title">
+                                            {skill.imageTitleList[index]}
+                                        </span>
                                         <img src={image} alt={skill.imageDesc[index]} />
-                                        <span className="skillview__image-text">{skill.imageDesc[index]}</span>
+                                        <span className="skillview__image-text">
+                                            {skill.imageDesc[index]}
+                                        </span>
                                     </div>
                                 ))}
                             </div>

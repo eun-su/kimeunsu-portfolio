@@ -34,4 +34,17 @@
 @media (max-width: 768px) {
     .flex-container-box { max-width: 100%; }
     .flex-item-box { width: calc(100% - 10px); }
+
+    .flex-section-1 { width: 100vw; }
+    .flex-section-2 { width: 100vw; }
+    .flex-section-3 { width: 100vw; }
+    .flex-section-4 { width: 100vw; }
+    .flex-section-5 { width: 100vw; }
+    .flex-section-6 { width: 100vw; }
+    .flex-section-7 { width: 100vw; }
+    .flex-section-8 { width: 100vw; }
+    .flex-section-9 { width: 100vw; }
+    .flex-section-10 { width: 100vw; }
+    .flex-section-11 { width: 100vw; }
+    .flex-section-12 { width: 100vw; }
 }

@@ -1,37 +1,59 @@
 import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const TARGETS = ["#wrap main", "#navmenu", ".homeview", ".accordion-body"];
+
+const resetTheme = () => {
+  gsap.set(TARGETS, {
+    clearProps: "backgroundColor,color"
+  });
+};
+
 const BackgroundTrigger = ({ bgColor, textColor, children }) => {
   const triggerRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
-    ScrollTrigger.matchMedia({
-      // ✅ PC 이상 (769px 이상)일 때만 트리거 작동
-    "(min-width: 769px)": function () {
-      gsap.to(["main", "#navmenu", ".homeview", ".active", ".accordion-body"], {
-        backgroundColor: bgColor,
-        color: textColor, // ✅ 텍스트 색상도 변경
-        duration: 0.3, // ✅ 부드러운 색 전환
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top 10%",
-          end: "bottom center",
-          toggleActions: "play reverse play reverse",
-        },
-      });
-      },
+    // 메인페이지가 아니면 혹시 남아 있는 스타일 초기화
+    if (location.pathname !== "/") {
+      resetTheme();
+      return;
+    }
 
-      // ✅ 모바일일 경우 아무 것도 하지 않음
-      "(max-width: 768px)": function () {
-      // 모바일에서는 ScrollTrigger 작동하지 않음
+    const mm = ScrollTrigger.matchMedia({
+      "(min-width: 769px)": () => {
+        const tween = gsap.to(TARGETS, {
+          backgroundColor: bgColor,
+          color: textColor,
+          duration: 0.3,
+          scrollTrigger: {
+            trigger: triggerRef.current,
+            start: "top 10%",
+            end: "bottom center",
+            toggleActions: "play reverse play reverse"
+          }
+        });
+
+        return () => {
+          tween?.scrollTrigger?.kill();
+          tween?.kill();
+        };
       }
     });
-    
-  ScrollTrigger.refresh(); // ✅ 강제로 ScrollTrigger 업데이트
-  }, [bgColor, textColor]); // ✅ bgColor, textColor가 변경될 때마다 실행
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      mm.revert();
+
+      // 메인페이지를 벗어나거나 컴포넌트가 사라질 때 스타일 원복
+      resetTheme();
+    };
+  }, [bgColor, textColor, location.pathname]);
 
   return (
     <div ref={triggerRef} className="background-trigger">

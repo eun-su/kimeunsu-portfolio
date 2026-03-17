@@ -48,11 +48,11 @@ const Profile = () => {
   </div>
   <div className="profile_introduce" ref={introduceRef}>
     <ul>
-      <li className="profile_split">공간을 설계하고 구축하는 것을 좋아합니다</li>
-      <li className="profile_split">다양한 도구를 활용해 나만의 공간을 디자인하고 그 안에 사람들의 마음이 움직일 수 있기를 바랍니다</li>
+      <li className="profile_split">웹 공간을 설계하고 구축하는 것을 좋아합니다</li>
+      <li className="profile_split">디자인, 구조, 인터랙션을 유기적으로 연결해 더 자연스럽고 몰입감 있는 경험을 만들고 있습니다</li>
       <li className="profile_split">웹 퍼블리싱의 가장 큰 매력은 상상을 현실로 구현하는 과정에 있다고 생각합니다</li>
       <li className="profile_split">구상한 디자인과 인터랙션이 실제로 작동하는 순간 새로운 가능성을 발견하는 기분이 듭니다</li>
-      <li className="profile_split">더 많은 언어와 기술을 배우고 연구하며 더욱 깊이 있는 작업을 함께하고 싶습니다</li>
+      <li className="profile_split">끊임없이 배우고 탐구하며, 더 깊이 있는 표현과 완성도를 만들어가는 기술자로 성장하고 싶습니다</li>
     </ul>
   </div>
   <div className="profile_imgText" ref={imgTextRef}>
